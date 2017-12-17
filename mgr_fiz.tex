@@ -284,7 +284,7 @@
     The effect of averaging is shown on Figure \ref{rys:usrednianie}. Visual response to a single visual stimulus is usually too weak to distinguish from the background of spontaneous activity of visual cortex. Averaging across several repetitions makes evoked potential stand out.
     \begin{figure}[H]
     	\begin{center}
-    		\includegraphics[scale=0.5]{usrednianie3.png}
+    		\includegraphics[scale=0.65]{usrednianie3.png}
     	\end{center}
     	\caption{ Comparison between single trials and their average for Rat1. Lighter blue lines represent few examples of responses to a single repetition of a stimulus. Bold and darker line is the averaged across all trials. Y axis is the same for all subfigures. }
     	\label{rys:usrednianie}
@@ -356,8 +356,17 @@
     In this work to calculate CSD the method introduced by Jan Potworowski called \textit{kernel Current Source Density} (kCSD) was used (\cite{wojcik}, \cite{potworowski}).
     
     \chapter{Results}
+	In Sections \ref{sec:time} and \ref{sec:freq} all results were presented in the same way. On Figure~\ref{rys:przyklad_odch} an example of used method is shown on the evoked potentials in channel 4 of Rat1.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.\linewidth]{przyklad_odch2.png}
+		\caption{Method of presenting results on an example of stimulation of 1 Hz in time domain. Bold line is the average evoked potential for all animals and blue background is the dispersion from the mean by one standard deviation. }
+		\label{rys:przyklad_odch}
+	\end{figure}
 
-    \section{Overview of results obtain in the time domain}
+    \section{Overview of results obtained in the time domain}
+    \label{sec:time}
     Next, there are all experiments with 6 different stimulation frequency presented one after another. In the Figure \ref{rys:srednie_1_2} results of stimulation with 1 and 2 Hz frequencies are presented---there is a clear peak of response after each repetition of stimulus.
     
     \begin{figure}[H]
@@ -373,11 +382,11 @@
 		\caption{Averaged signal for stimulation of 2 Hz.}
 		\label{rys:srednie_2Hz}
 	\end{subfigure}
-	\caption{Averaged signal across 40 repetitions of stimuli.}
+	\caption{Results in time domain for stimulation with low frequencies.}
 	\label{rys:srednie_1_2}
 	\end{figure}
     
-    For frequencies higher than 2 Hz signals look different (Fig. \ref{rys:srednia_czas}). Firstly the response for stimuli is blurred: stimuli occurs so often that it is impossible to determine where response for certain stimulus starts and ends. The signal forms a continuous oscillation. During the first 1.5 s of the stimulation: the amplitude of oscillations is higher than for the rest. At around 5.1 s there is noticeable peak probably as a response to end of stimulation. 
+    For frequencies higher than 2 Hz signals look different (Fig. \ref{rys:srednia_czas}). Firstly the response for stimuli is blurred: stimuli occurs so often that it is impossible to determine where response for certain stimulus starts and ends. The signal forms a continuous oscillation. During the first 1.5 s of the stimulation: the amplitude of oscillations is higher than for the rest. At around 5.15 s there is noticeable peak probably as a response to end of stimulation. 
     
 	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -405,32 +414,36 @@
 	\caption{Averaged signal for stimulation of 12 Hz.}
 	\label{rys:srednie_12Hz}
 	\end{subfigure}
-	\caption{All experiments averaged by 40 trials in time domain. Point 0 s shows beginning of 5 s constant stimulation. Blue intervals represent standard deviations by the animals. Y axis is the same for all subfigures.}
+	\caption{Results in time domain for stimulation with high frequencies.}
 	\label{rys:srednia_czas}
 		
 	\end{figure}
 	
-    \section{Overview of results obtain in the frequency domain}
+    \section{Overview of results obtained in the frequency domain}
+    \label{sec:freq}
     
-    Next, all power spectra calculated by Welch's methods are shown in Fig. \ref{rys:srednie_widmo}. For stimulation of 1 Hz there are up to 5 harmonic, sometimes even bigger than the fundamental frequency (Fig. \ref{rys:widmo_1Hz}). For frequencies 2 -- 10 Hz, the fundamental frequency and the second harmonic are clean and much bigger than others (Fig. \ref{rys:widmo_2Hz} -- \ref{rys:widmo_10Hz}). Response for 12 Hz in power spectrum is noticeably weaker -- peak in the fundamental frequency is at the same level as low frequency noise (Fig. \ref{rys:widmo_12Hz}).
+    Power spectra calculated by Welch's methods are shown in Figures \ref{rys:widmo_1_2} and \ref{rys:srednie_widmo}. For stimulation of 1 Hz there are up to 5 harmonic, and for both 1 and 2 Hz there is so high dispersion that for lowest values there is no difference between peak and zero (Fig. \ref{rys:widmo_1_2}).     
     
-	\begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
-		\centering
+    \begin{figure}[H]
+    	\begin{subfigure}{.5\textwidth}
+    		\centering
 		\includegraphics[width=1.\linewidth]{widmo_1Hz.png}
 		\caption{Power spectrum for stimulation of 1 Hz.}
 		\label{rys:widmo_1Hz}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
+    	\end{subfigure}
+    	\begin{subfigure}{.5\textwidth}
+    		\centering
 		\includegraphics[width=1.\linewidth]{widmo_2Hz.png}
 		\caption{Power spectrum for stimulation of 2 Hz.}
 		\label{rys:widmo_2Hz}
-	\end{subfigure}
-	
-\end{figure}
-\begin{figure}[H]\ContinuedFloat		
-	
+    	\end{subfigure}
+    	\caption{Results in frequency domain for stimulation with low frequencies.}
+    	\label{rys:widmo_1_2}
+    \end{figure}
+    
+    For frequencies from range 4 -- 10 Hz, the fundamental frequency and the second harmonic are clean and much bigger than others. Response for 12 Hz in power spectrum is noticeably weaker -- peak in the fundamental frequency is at the same level as low frequency noise (Fig.~\ref{rys:srednie_widmo}).
+    
+	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=1.\linewidth]{widmo_4Hz.png}
@@ -458,28 +471,40 @@
 		\label{rys:widmo_12Hz}
 	\end{subfigure}
 	
-	\caption{Power spectrum calculated for average by 40 trials for each animal. Blue intervals represent standard deviations by the animals. Y axis is different for all subfigures.}
+	\caption{Results in frequency domain for stimulation with high frequencies.}
 	\label{rys:srednie_widmo}
 	
 \end{figure}    
 \section{Analysis of current source density}
-Current source density analysis is shown in Figure \ref{rys:csd}. For stimulation of 1 and 2 Hz there is a change in polarization to each repetition of stimulus. For stimulation of frequency higher than 2 Hz there is a change of polarization just after end of stimulation (around 5.1~s). 
+\label{sec:csd}
 
 
-	\begin{figure}[H]
+Current source density analysis is shown in Figure \ref{rys:csd_1_2} and \ref{rys:csd}. For stimulation of 1 and 2 Hz there is a change in polarization to each repetition of stimulus (Fig.~\ref{rys:csd_1_2}). 
+
+    \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=1.\linewidth]{csd_1Hz_5s.png}
 		\caption{CSD for stimulation of 1 Hz.}
 		\label{rys:csd_1Hz}
-	\end{subfigure}%
+	\end{subfigure}
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=1.\linewidth]{csd_2Hz_5s.png}
 		\caption{CSD for stimulation of 2 Hz.}
 		\label{rys:csd_2Hz}
 	\end{subfigure}
-	
+	\begin{subfigure}{\textwidth}
+		\centering
+		\includegraphics[scale=0.4]{legend2.png}
+	\end{subfigure}
+	\caption{Results of CSD for stimulation with low frequencies.}
+	\label{rys:csd_1_2}
+	\end{figure}
+
+For stimulation of frequency higher than 2 Hz there is a change of polarization just after end of stimulation (around 5.2~s; Fig. \ref{rys:csd}). 
+
+	\begin{figure}[H]	
 	\begin{subfigure}{.5\textwidth}
 		\centering
 		\includegraphics[width=1.\linewidth]{csd_4Hz_5s.png}
@@ -492,9 +517,6 @@ Current source density analysis is shown in Figure \ref{rys:csd}. For stimulatio
 		\caption{CSD for stimulation of 7 Hz.}
 		\label{rys:csd_7Hz}
 	\end{subfigure}
-	
-\end{figure}
-\begin{figure}[H]\ContinuedFloat
 	
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -509,31 +531,28 @@ Current source density analysis is shown in Figure \ref{rys:csd}. For stimulatio
 		\label{rys:csd_12Hz}
 	\end{subfigure}
 	
-	\caption{All experiments averaged by 40 trials and CSD is performed. Point 0 s shows beginning of 5 s constant stimulation. Scale is from blue (source) to red (sink). Y axis is the same for all subfigures.}
+	\begin{subfigure}{\textwidth}
+	\centering
+	\includegraphics[scale=0.4]{legend2.png}
+	\end{subfigure}
+	
+	\caption{Results of CSD for stimulation with low frequencies.}
 	\label{rys:csd}
 	
 	\end{figure}
 
     
-    \section{Analysis of laminar profile for stimulation with 1 Hz frequency}
-    Vertically the reverse of potential in layer IV of VCx can be observed (Fig. \ref{rys:srednie_1Hz_1s}). Granular layer (always 4. subfigure) is characterized by the most diverse response to the stimulation within this group of animals. It can be noticed that first peak of response is stable whereas second peak is more varied. 
+    \section{Analysis of laminar profile for stimulation with 1 Hz}
+    The reverse of potential in layer IV of VCx can be observed (Fig. \ref{rys:srednie_1Hz_1s}). Granular layer (always 4$^{th}$ subfigure) is characterized by the most diverse response to the stimulation within this group of animals. It can be noticed that first peak of response is stable whereas second peak is more varied. 
 	\begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
 		\centering
-		\includegraphics[width=1.\linewidth]{srednie_1Hz_linie.png}
-		\caption{}
-		\label{rys:srednie_1Hz_linie}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.\linewidth]{srednie_1Hz_std.png}
-		\caption{}
-		\label{rys:srednie_1Hz_std}
-	\end{subfigure}
-
-  \caption{Laminar profile in function of depth of the electrode for 1 Hz stimulation. All experiments averaged by 40 trials in time domain -- bold line. Single animals are presented in two ways: by separated lines (\ref{rys:srednie_1Hz_linie}) or by the standard deviation (\ref{rys:srednie_1Hz_std}). Point 0 s shows beginning of 5 s constant stimulation (here only 0.8 s is shown). Y axis is the same for both subfigures. }
-  \label{rys:srednie_1Hz_1s}
+		\includegraphics[scale=0.4]{usrednianie_z_tlem.png}
+		\caption{Laminar profile in function of depth of the electrode for 1 Hz stimulation. All experiments averaged by 40 trials in time domain -- bold line. Differences between animals are by the standard deviation. Time 0 s indicates beginning of 5 s constant stimulation (here only 0.8 s is shown). Both peaks are marked by color backgrounds.}
+  		\label{rys:srednie_1Hz_1s}
 \end{figure}
+
+\textbf{DOTAD POPRAWILAM}
+\newpage
 
 In the Figure \ref{rys:profil_1Hz_amp} laminar profile of amplitude in dependence of depth of the electrode is shown. Amplitude of the first peak is very similar among animals and there is clear change of sign between third and forth channel (Fig. \ref{rys:profil_1Hz_amp1}). Amplitude of the second peak is characterized by a high variance and there is not difference between layers (Fig. \ref{rys:profil_1Hz_amp2}).
   
@@ -578,7 +597,7 @@ In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak 
 
 
  
- \section{Laminar analysis for stimulation with 2 Hz frequency}
+ \section{Analysis of laminar profile for stimulation with 2 Hz}
   
     In the Figure \ref{rys:profil_2Hz_amp} laminar profile of amplitude of response to stimulus in dependence of depth of the electrode for stimulation of 2 Hz is shown. Amplitude of the first peak is very similar among animals except channel 4 where variance is the biggest. (Fig. \ref{rys:profil_2Hz_amp1}). Tendency of amplitude of the second peak is like for 1 Hz: it has a high variance and there is not difference between layers (Fig. \ref{rys:profil_2Hz_amp2}).
   
@@ -620,7 +639,7 @@ In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak 
   	\label{rys:profil_2Hz_wid}
   \end{figure}
   
-\section{Laminar analysis for stimulation with 4 Hz frequency} 
+\section{Analysis of laminar profile for stimulation with 4 Hz} 
    	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -638,7 +657,7 @@ In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak 
 	\caption{Laminar profile in function of depth of the electrode for 4 Hz stimulation.}
 	\label{rys:profil_4Hz_wid}
 \end{figure}
-\section{Laminar analysis for stimulation with 7 Hz frequency}  
+\section{Analysis of laminar profile for stimulation with 7 Hz}  
    	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -656,7 +675,7 @@ In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak 
 	\caption{Laminar profile in function of depth of the electrode for 7 Hz stimulation.}
 	\label{rys:profil_7Hz_wid}
 \end{figure}
-\section{Laminar analysis for stimulation with 10 Hz frequency}  
+\section{Analysis of laminar profile for stimulation with 10 Hz}  
    	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -674,7 +693,7 @@ In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak 
 	\caption{Laminar profile in function of depth of the electrode for 10 Hz stimulation.}
 	\label{rys:profil_10Hz_wid}
 \end{figure}
-\section{Laminar analysis for stimulation with 12 Hz frequency}  
+\section{Analysis of laminar profile for stimulation with 12 Hz}  
    	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
