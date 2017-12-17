@@ -22,6 +22,24 @@
 \usepackage{float}
 \graphicspath{ {./images/} }
 
+\usepackage{booktabs} %ladne tabelki
+\usepackage{tabularx} %kolumna
+
+\usepackage{placeins}
+\usepackage{tikz}
+
+%\newcolumntype{C}{>{\centering\arraybackslash}X}  %nowe typy kolumn w tabeli
+%\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+%\newcolumntype{s}{>{\hsize=.5\hsize}X}
+
+\newcolumntype{R}{>{\centering\arraybackslash\hsize=.22\hsize}X} 
+\newcolumntype{C}{>{\centering\arraybackslash\hsize=.13\hsize}X}
+
+
+
+
+\usepackage{esvect} %do zaznaczania wektorow
+
 %\usepackage[round]{natbib}   % omit 'round' option if you prefer square brackets
 %\bibliographystyle{plainnat}
 \usepackage[maxcitenames=2, backend=biber, style=authoryear]{biblatex}
@@ -61,7 +79,9 @@
 
 \date{December 2017}
 
-\keywords{po polsku czy po ang?}
+\keywords{electrophysiology, visual system, primary visual cortex, visual stimulation, local field potential, current source density, temporal frequency \\
+	elektrofizjologia, układ wzrokowy, pierwszorzędowa kora wzrokowa, stymulacja wzrokowa, lokalny potencjał polowy, current source density, częstotliwość czasowa \\
+		\textbf{po polsku czy po ang?}}
 
 \bibliography{bibliografia}
 
@@ -72,11 +92,6 @@
     \let\cleardoublepage\clearpage
     
     \begin{abstract}
-Krótkie (maks. 800 znaków) streszczenie pracy, na przykład:
-
-Lorem ipsum – tekst składający się z łacińskich i quasi-łacińskich wyrazów, mający korzenie w klasycznej łacinie, wzorowany na fragmencie traktatu Cycerona „O granicach dobra i zła” (De finibus bonorum et malorum) napisanego w 45 r. p.n.e. Tekst jest stosowany do demonstracji krojów pisma (czcionek, fontów), kompozycji kolumny itp. Po raz pierwszy został użyty przez nieznanego drukarza w XVI w.
-
-Tekst w obcym języku pozwala skoncentrować uwagę na wizualnych aspektach tekstu, a nie jego znaczeniu.
 
 
      \end{abstract}
@@ -150,23 +165,22 @@ Tekst w obcym języku pozwala skoncentrować uwagę na wizualnych aspektach teks
         \end{figure}   
              
         
-        \section{Local field potentials (LFPs)}
-        Electrophysiology is a method to record activity of the brain with high temporal resolution and weaker spatial. Thanks to electrodes spread in different places on the brain we can gather information from them. It can be used to check the response for various stimuli at different locations. Usage of vertical electrodes allows to record simultaneously signal across the brain. Nearly all visual information enters the cortex via area VCx. 
+        \section{Local field potential}
+        Electrophysiology is a method to record activity of the brain with high temporal resolution and weaker spatial. Thanks to electrodes inserted in different places the brain we can gather information from them. It can be used to check the response for various stimuli at different locations. Usage of vertical electrodes allows to record simultaneously signal across the brain. Nearly all visual information enters the cortex via area VCx. 
         
         Local field potentials (LFP), the low-frequency part of extracellular electrical
-        recordings, are a measure of the neural activity reflecting dendritic
-        processing of synaptic inputs to neuronal populations. LFP consisted of postsynaptic and action potentials  (Fig. \ref{rys:VCx_LFPs}).
-        
-        // Electrocorticogram is the signal gathered from the cortex and the subcortical structures. Electrodes placed next to neurons allow recording brain activity from a small region which is called local field potential (LFP). //
-        \begin{figure}[htbp]
+        recordings from electrodes inserted into the examined tissue, are a measure of the neural activity reflecting dendritic
+        processing of synaptic inputs to neuronal populations. LFP is a superposition of postsynaptic and action potentials  (Fig. \ref{rys:VCx_LFPs}).
+     
+        \begin{figure}[H]
         	\begin{center}
         		\includegraphics[scale=0.5]{VCx_LFPs2.png}
         	\end{center}
-        	\caption{ An example of LFP signal in VCx.}
+        	\caption{ An example of LFP signals recorded in VCx.}
         	\label{rys:VCx_LFPs}
         \end{figure} 
         
-        Postsynaptic potentials are potentials reaching dendrite of nerve cell. They can be either excitatory (Excitatory Post-Synaptic Potentials, EPSPs) that enhance chance of induces action potentials or inhibitory (Inhibitory Post-Synaptic Potentials, IPSPs) which that making action potential less likely to happen. Lots of potentials reach neuron. When summary of them reach threshold neuron becomes excited and generate action potential which propagates along axon (Fig. \ref{rys:PSPs}).
+        Postsynaptic potentials are potentials that are generated in the postsynaptic membrane of a dendrite of nerve cell. They can be either excitatory (Excitatory Post-Synaptic Potentials, EPSPs)---that enhance chance of induces action potentials or inhibitory (Inhibitory Post-Synaptic Potentials, IPSPs)---making action potential less likely to happen. Lots of potentials reach neuron. When the sum of them reaches a threshold the neuron becomes excited and generates an action potential which propagates along axon (Fig. \ref{rys:PSPs}).
         \begin{figure}[htbp]
         	\begin{center}
         		\includegraphics[scale=1]{PSPs.png}
@@ -177,46 +191,102 @@ Tekst w obcym języku pozwala skoncentrować uwagę na wizualnych aspektach teks
         
 \chapter{Materials and methods}   
  	\section{Subjects}
- 	All experimental procedures  were performed conducted in accordance with the ARVO Statement for the Use of Animals in Ophthalmic and Vision Research and  the EC Directive 86/609/EEC for animal experiments using protocols and methods accepted by the First Warsaw Local Ethical Commission for Animal Experimentation. The experiments took place in Neurobiology of Vision Laboratory in Nencki Institute with great help from mgr Katarzyna Kordecka.
- 	For electrophysiological experiments presented in this study, we used 6 adult male Wistar rats (250-300g). All animals were housed with free access to food and water and maintained on a 12 h light/dark cycle.
+ 	For electrophysiological experiments presented in this study, we used 6 adult male Wistar rats (250-300g). All animals were housed with free access to food and water and maintained on a 12 h light/dark cycle. All experimental procedures  were conducted in accordance with the ARVO Statement for the Use of Animals in Ophthalmic and Vision Research and  the EC Directive 86/609/EEC for animal experiments using protocols and methods accepted by the First Warsaw Local Ethical Commission for Animal Experimentation. The experiments took place in Laboratory of Visual Neurobiology in Nencki Institute with great help from mgr Katarzyna Kordecka.
+ 
  	
  	\section{Surgical procedures}
- 	Animals were under deep urethane anesthesia (1.5 g/kg, Sigma-Aldrich, Germany, 30\% aqueous solution, i.p) and placed in a stereotaxic apparatus. Additional doses of urethane (0.15 g/kg) were administered if it was such a necessity. Body temperature was maintained between 36 and 38 \degree C using an automatically controlled electric heating blanket. Every hour fluid requirements were fulfilled by subcutaneous injections of 0.9\% NaCl (1ml/hour) and eyes were humidified with Vidisic (Polfa Warszawa S.A., Poland) to prevent cornea from drying. The skin on the head was disinfected with iodine and local anesthetic of 1\% lidocaine hydrochloride (0.5 ml, Polfa Warszawa S.A., Poland) was injected over the scalp. The skull was opened to expose areas of the binocular primary VCx (7.5 mm posterior to bregma, 5.0 mm lateral) in left hemisphere. Coordinates were chosen based on the rat brain atlas of Paxinos and Watson (\cite{atlas}). 
+ 	Animals under deep urethane anesthesia (1.5 g/kg, Sigma-Aldrich, Germany, 30\% aqueous solution, i.p) were placed in a stereotaxic apparatus. Additional doses of urethane (0.15~g/kg) were administered when necessary. Body temperature was maintained between 36 and 38 \degree C using an automatically controlled electric heating blanket. Every hour fluid requirements were fulfilled by subcutaneous injections of 0.9\% NaCl (1ml/hour) and eyes were humidified with Vidisic (Polfa Warszawa S.A., Poland) to prevent cornea from drying. The skin on the head was disinfected with iodine and local anesthetic with 1\% lidocaine hydrochloride (0.5 ml, Polfa Warszawa S.A., Poland) was injected over the scalp. The skull was opened to expose areas of the binocular primary VCx (7.5 mm posterior to bregma, 5.0 mm lateral) in left hemisphere. Coordinates of electrode were chosen based on the rat brain atlas of Paxinos and Watson (\cite{atlas}). 
  	
- 	\section{Electrophysiology recording}
- 	In the experiments stimuli were presented with interstimulus intervals (ISI) of  1, 0.5, 0.25, 0.2, 0.143, 0.08 [s] which corresponds to frequencies 1, 2, 4, 7, 10, 12 [Hz], respectively. An individual stimulus was a 2-millisecond-long LED flash at 560 cd/m2 luminance. There was dark in the room and rats had both eyes opened. For each frequency the stimuli were applied in 40 repetitions of 5-second-long chunks with random (2-3 s) breaks between them (Fig. \ref{rys:stimuli}).
+ 	\section{Stimulation electrode}
+ 	For all experiments the same custom vertical and made of tungsten electrode was used (Fig.~\ref{rys:electrode}). The contacts on the electrode were chosen based on previous experiments when it turned out that it is difficult to record precisely from layer IV which is very thin and 
+ 	(i w dodatku można w niej zaobserować repolaryzację w sensie jest dużo kanałów z dodatnim i ujemnym potencjałem a samo przegięcie występuje tylko na jednej głębokości. w zależności właśnie od tego miejsca wyznaczano głębokość warstwy IV i resztę kanałów dopasowywano względem niej.)
+ 	\begin{figure}[H]
+ 		\begin{center}
+ 			\includegraphics[scale=0.5]{electrode.png}
+ 		\end{center}
+ 		\caption{Scheme of 12-channel vertical electrode with intervals between contacts expressed in mm.}
+ 		\label{rys:electrode}
+ 	\end{figure} 
+ 	Chociaż użyto tej samej elektrody do wszystkich doświadczeń to nie zawsze te same kanały odpowiadały tym samym głębokością, co wynika z różnic anatomicznych między zwierzętami a także metodą która nie jest bardzo dokładna przestrzennie i nawet na tej samej głębokości może rejestrować sygnał pochodzący z miejsca ciut wyżej lub niżej niż u innego zwierzaka. In Table~\ref{tab:chosen_chan} podsumowano które kanały zostały uwględnione dla wszystkich zwierzaków.
+ 	\begin{table}[H]
+	\caption{Summary of all channels that have been used for each animal.}
+	\begin{center}
+		\begin{tabularx}{0.9\textwidth}{R C C C C C C C}
+			\toprule
+			\textbf{Depth~[mm]} & \textbf{Rat1} & \textbf{Rat2} & \textbf{Rat3} & \textbf{Rat4} & \textbf{Rat5} & \textbf{Rat6} \\
+			\midrule
+			0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+			0.15 &  &  & 2 & & 2&  \\
+			0.3 & 2 & 2 &  & 2 & & 2 \\
+			0.4 &  &  & 3 &  &  &  \\
+			0.5 & 3 & 3 &4  & 3 & 3 & 3 \\
+			0.6 & & 4 &  & 4 & & 4 \\
+			0.7 & 4 &  &  &  & 4 &  \\
+			0.9 & & 5 & 5 & 5 & 5& 5 \\
+			1.15 & 5 &  &  &  & 6 & 6 \\
+			1.4 & & 6 & 6 & 6 & 7 &  \\
+			1.6 & 6 &  &  &  & & 7 \\
+			1.8 & 7 & 7 & 7 & 7 & &  \\
+			\bottomrule
+		\end{tabularx}
+	\end{center}
+	\label{tab:chosen_chan}
+	\end{table}
+ 	\newpage
+ 	\section{Stimulation procedure}
+ 	In the experiments stimuli were presented with interstimulus intervals of  1, 0.5, 0.25, 0.2, 0.143, 0.08 [s] which correspond to frequencies 1, 2, 4, 7, 10, 12 [Hz], respectively. An individual stimulus was a 2-millisecond-long LED flash at 560 cd/m$^2$ luminance. It was dark in the room and rats had both eyes opened. For each frequency the stimuli were applied in 40 repetitions of 5-second-long series with random (2-3 s) breaks between them (Fig. \ref{rys:stimuli}).
  	\begin{figure}[htbp]
  		\begin{center}
- 			\includegraphics[scale=0.5]{stimuli.png}
+ 			\includegraphics[scale=0.5]{paradigms.png}
  		\end{center}
- 		\caption{ The stimuli were presented in 5 s long series at given frequency (from 1 to 12 Hz). The number of chunks was always 40 and number of stimuli depended on frequency.}
+ 		\caption{ Stimulation protocol. The stimuli were presented in 5 s long 40 series at given frequency (from 1 to 12 Hz). The number of stimuli in a series depended on frequency.}
  		\label{rys:stimuli}
  	\end{figure} 
 
     \chapter{Data analysis}
-    \section{Description averaging visual potentials}
+    
+    \section{Data preparation}
+    Signal was filtered bandpass in range of 0.3-500 Hz with 500 gain using differential AC amplifiers (A-M 140 Systems, US) and recorded with sampling frequency 1000 Hz. For further analysis hardware filter turned out to not be enough so three other, Butterworth filters was used: 1$^{st}$ order lowpass at cut off 100 Hz,  1$^{st}$ order bandstop at cut off between 45 and 55 Hz and  1$^{st}$ order highpass at cut off 0.5 Hz. To avoid change of phase of the signal \textit{filtfilt} function was used. After filtering each channels of data was normalized by subtracting the mean of all recording for each channel and divided by their standard deviation. Butterworth filters was used because they are characterized by low deformation of signal giving smooth and monotonic transfer function. It is at cost of low efficiency of filtering, but for this data it was sufficient. After this preparation data was cut into 6-s-long chunks from -0.5 s to 5.5 s where 0 was the beginning of stimulation and averaged across trials. For further analysis 7 channels out of 12 from contralateral (in respect of stimulation side) VCx were chosen to obtain representative profile: 3 of supragranular, 3 of infragranular and one channel from granular layer (layer IV; Fig \ref{rys:kanaly}).
+    
+    \begin{figure}[H]
+    	\begin{center}
+    		\includegraphics[scale=0.75]{wybieranie_kanalow3.png}
+    	\end{center}
+    	\caption{ Representative averaged evoked potentials from VCx. On channels at 0.6 and 0.7~mm depth repolarization can be observed. Channels chosen to further analysis are marked by purple stars. Time 0 s means an occurrence of stimulus.}
+    	\label{rys:kanaly}
+    \end{figure} 
+    
+    Reduction of number of channels was necessary due to two reasons:
+    \begin{itemize}
+    	\item sometimes short circuits between channels occurred
+    	\item there were differences of depth of electrodes and layer IV was recorded by different channels
+    \end{itemize} 
+    Choice was made based of analysis on the averaged evoked potentials, Section 3.2.2 [poprawic!!!!].
+    
+    \section{Averaging visual potentials}
+    
+    \subsection{Description of the method}
     Visual Evoked Potential (VEP) is a case of steady state evoked potential where light is a stimulus. In theory spontaneous activity of ECoG is a stochastic process (independent, stationary noise with mean equal to zero) and brain response to each stimulus is constant. In that way signal in each realization can be expressed by  
     \begin{equation}
     x_i(t) = s(t) + n_i(t),
     \end{equation}
-    where s(t) is a real signal, ni(t) noise part. For white noise with mean zero, expected value equals:
+    where $s(t)$ is a real signal, $n_i(t)$ noise part. For white noise with mean zero, expected value equals:
     \begin{equation}
     E\left[ \frac{1}{N}\sum_{i=1}^{N} n_i(t)\right] = 0, 
     \end{equation}
     which causes that for averaged signal: $E\left[ \bar{x}(t) \right] = s(t).$
     
-    \section{Usage of method}
-    Data from each record was averaged by trials and 7 channels out of 12 were chosen to obtain representative profile: 3 of supragranular, 3 of infragranular and one channel from granular layer (layer IV,  Fig \ref{rys:wybieranie_kanalow}).
-     
+    \subsection{Measurement of peak amplitude in VEP}
+    
     \begin{figure}[H]
-    \begin{center}
-    		\includegraphics[scale=0.5]{wybieranie_kanalow.png}
+    	\begin{center}
+    		\includegraphics[scale=0.5]{amplitude2.png}
     	\end{center}
-    	\caption{ Representative averaged evoked potentials from V1. On channels at 0.8 and 0.9 mm depth repolarization can be observed. Channels chosen to further analysis are marked in bold. Time 0 s means an occurrence of stimulus.}
-    	\label{rys:wybieranie_kanalow}
+    	\caption{ Representative averaged evoked potentials from VCx. On channels at 0.6 and 0.7~mm depth repolarization can be observed. Channels chosen to further analysis are marked by purple stars. Time 0 s means an occurrence of stimulus.}
+    	\label{rys:amplitude}
     \end{figure} 
 
-	After each repetition of stimuli there are two deflection of mean visible. First deflection starts nearly immediately after stimulus - second after around 0.3 s  Further they are called first and second peaks (no matter whether they are negative or positive, Fig. \ref{rys:piki}). For stimulation of 2 Hz there is also visible another peak for the next stimulus at 0.5 s (Fig \ref{rys:piki_2Hz}). 
+	After each repetition of stimuli there are two deflection of mean visible. First deflection starts nearly immediately after stimulus - second after around 0.3 s.  Further they are called first and second peaks (no matter whether they are negative or positive, Fig. \ref{rys:piki}). For stimulation of 2 Hz there is also another peak visible for the next stimulus at 0.5 s (Fig \ref{rys:piki_2Hz}). 
 	
 	\begin{figure}[H]
 		
@@ -236,11 +306,51 @@ Tekst w obcym języku pozwala skoncentrować uwagę na wizualnych aspektach teks
 	\label{rys:piki}
 	\end{figure}
 
-    \section{Welch}
-    The method, introduced by Welch (\cite{welch}),  relies  on splitting the signal into overlapping time windows, estimation of the periodogram for each of the windows, and then averaging of the estimates. Estimation of power spectrum density was calculated both on averaged by trials data. Hamming window with 3-second duration by 2 seconds was used. 
+
+	\section{Estimation of signal spectrum}
+	Spectra of the signals were estimated by the method, introduced by Welch (\cite{welch}). It relies  on splitting the signal into overlapping time windows, estimation of the periodogram for each of the windows, and then averaging of the estimates. In this experiment, data was averaged by 5-second-long chunks for 7 channels and estimation of power spectrum density was calculated. Hamming window with 3-second-long with overlap of 2 seconds was used. On Figure \ref{rys:pik_widmo} measurement of the amplitude of fundamental frequency and second harmonic is presented.
+
+	\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{pik_widmo2.png}
+	\caption{Measurement of the amplitude of peaks in stimulation with 7 Hz.}
+	\label{rys:pik_widmo}
+	\end{figure}
+
     
-    \section{CSD}
+    \section{Current Source Density}
     To localize synaptic dynamics, it is convenient, whenever possible, to estimate the density of transmembrane current sources (CSD) generating the LFP.
+    %\newpage
+    Let us assume that we record potential in infinitive, homogeneous ans isotropic conductive medium. Current $I$ in that tissue has current density $\vv{J}$ given by equation:
+    \begin{equation}
+    \vv{J}= \frac{I \vv{r}}{4\pi r^2}
+    \end{equation}
+    radially at a distance $r$ from the source. In conductive medium with conductivity $\sigma$ Ohm's law describes relation between current density and potential:
+    \begin{equation}
+    \vv{J}=-\sigma \nabla V.
+    \end{equation}
+    Multitude of currents $I_j$ located at $\vv{r_j}$ induce potential:
+    \begin{equation}
+    V(\vv{r})=\sum_{j} \frac{I_j}{4 \pi \sigma |\vv{r}-\vv{r'}|} .
+    \end{equation}
+    Introducing current source density equals to:
+    \begin{equation}
+    C(\vv{r})=\sum_{j} I_j \delta (\vv{r}-\vv{r'}),
+    \end{equation}
+    we can find a relation between potential and CSD:
+    \begin{equation}
+    V(\vv{r})=\frac{1}{4\pi\sigma}\int d^3 \vv{r'} \frac{C(\vv{r'})}{|\vv{r}-\vv{r'}|},
+    \end{equation}
+    where $V$ is potential generated by sources, $\sigma$ is a conductivity, $\vv{r}$ is a distance between potential and source. By inverting this relation we get Poisson equation:
+    \begin{equation}
+    C(\vv{r})=-\sigma \Delta V.
+    \label{eq:2}
+    \end{equation}
+    Equation \ref{eq:2} can be generalized for arbitrary conductivity tensor fields $\sigma$:
+    \begin{equation}
+    C(\vv{r})=-\nabla \cdot [\sigma \nabla V].
+    \end{equation}
+    In this work to calculate CSD the method introduced by Jan Potworowski called \textit{kernel Current Source Density} (kCSD) was used (\cite{wojcik}, \cite{potworowski}).
     
     \chapter{Results}
     Visual response to a single visual stimulus is usually too weak to distinguish from the background of spontaneous activity of visual cortex. Averaging across several repetitions makes evoked potential stand out (Fig. \ref{rys:usrednianie}).
