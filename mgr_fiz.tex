@@ -262,7 +262,7 @@
    	\item there were differences of depth of electrodes and layer IV was recorded by different channels.
    \end{itemize} 
    
-   The choice was made basing on analysis on the averaged evoked potentials. The referential depth was established by a channel where repolarization was observed right after the occurrence of the stimulus. This channel was assumed to be recorded from layer IV. Then 3 other channels above the reference and 3 more below were chosen, possibly maximally scattered, but avoiding channels which exhibited any distortion.
+   The choice was made basing on analysis on the averaged evoked potentials. The referential depth was established by a channel where repolarization was observed right after the occurrence of the stimulus. This channel was assumed to be recorded from layer IV. Then 3 other channels above the reference and 3 more below were chosen, possibly maximally scattered, but avoiding channels which exhibited any distortion. This method is a simplified version of the one introduced by (\cite{maier2011}).
    
    
    \section{Averaging visual potentials}
@@ -285,7 +285,7 @@
    The effect of averaging is shown in Figure \ref{rys:usrednianie}. Visual response to a single visual stimulus is usually too weak to distinguish it from the background of spontaneous activity of visual cortex. Averaging across several repetitions makes evoked potential stand out.
    \begin{figure}[H]
    	\begin{center}
-   		\includegraphics[scale=0.5]{usrednianie3.png}
+   		\includegraphics[scale=0.6]{usrednianie3.png}
    	\end{center}
    	\caption{ Comparison between single trials and their average for Rat1. Lighter blue lines represent few examples of responses to a single repetition of a stimulus. Bold and darker line is the average across all trials. Y axis is the same for all subfigures. }
    	\label{rys:usrednianie}
@@ -542,59 +542,57 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
 
     
     \section{Analysis of laminar profile for stimulation with 1 Hz}
-    The reverse of potential in layer IV of VCx can be observed (Fig. \ref{rys:srednie_1Hz_1s}). Granular layer (always 4$^{th}$ subfigure) is characterized by the most diverse response to the stimulation within this group of animals. It can be noticed that first peak of response is stable whereas second peak is more varied. 
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.4]{usrednianie_z_tlem.png}
-		\caption{Laminar profile in function of depth of the electrode for 1 Hz stimulation. All experiments averaged by 40 trials in time domain -- bold line. Differences between animals are by the standard deviation. Time 0 s indicates beginning of 5 s constant stimulation (here only 0.8 s is shown). Both peaks are marked by color backgrounds.}
-  		\label{rys:srednie_1Hz_1s}
-\end{figure}
+        The reverse of potential in layer IV of VCx can be observed (Fig. \ref{rys:srednie_1Hz_1s}). Granular layer (always 4\textsuperscript{th} subfigure) is characterized by the most diverse responses to the stimulation within this group of animals. It can be noticed that first peak of the response is stable whereas second peak is more varied. 
+    \begin{figure}[H]
+    	\centering
+    	\includegraphics[scale=0.4]{usrednianie_z_tlem.png}
+    	\caption{Laminar profile of the response amplitude as a function of depth of the electrode for 1 Hz stimulation. All experiments averaged by 40 trials in time domain---bold line. Differences between animals are by the standard deviation. Time 0 s indicates beginning of 5 s constant stimulation (here only 0.8 s is shown). First and second peak are marked by blue and purple background respectively.}
+    	\label{rys:srednie_1Hz_1s}
+    \end{figure}
+    
+ 
+    \begin{figure}[H]
+    	\begin{subfigure}{.5\textwidth}
+    		\centering
+    		\includegraphics[width=1.\linewidth]{profile_1Hz_amp.png}
+    		\caption{Amplitude of the first peak.}
+    		\label{rys:profil_1Hz_amp1}
+    	\end{subfigure}%
+    	\begin{subfigure}{.5\textwidth}
+    		\centering
+    		\includegraphics[width=1.\linewidth]{profile_1Hz_amp2.png}
+    		\caption{Amplitude of the second peak.}
+    		\label{rys:profil_1Hz_amp2}
+    	\end{subfigure}
+    	
+    	\caption{Distribution of amplitudes of the first (a) and the second (b) peak across animals as a function of depth of the electrode for 1~Hz stimulation. On each box, the central mark indicates the median, and the bottom and top edges of the box indicate the 25\textsuperscript{th} and 75\textsuperscript{th} percentiles, respectively. The whiskers extend to the most extreme data points not considering outliers, and the outliers are plotted with red plus.}
+    	\label{rys:profil_1Hz_amp}
+    \end{figure}
 
-\textbf{DOTAD POPRAWILAM}
-\newpage
-
-In the Figure \ref{rys:profil_1Hz_amp} laminar profile of amplitude in dependence of depth of the electrode is shown. Amplitude of the first peak is very similar among animals and there is clear change of sign between third and forth channel (Fig. \ref{rys:profil_1Hz_amp1}). Amplitude of the second peak is characterized by a high variance and there is not difference between layers (Fig. \ref{rys:profil_1Hz_amp2}).
-  
-\begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.\linewidth]{profile_1Hz_amp.png}
-		\caption{Amplitude of the first peak.}
-		\label{rys:profil_1Hz_amp1}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.\linewidth]{profile_1Hz_amp2.png}
-		\caption{Amplitude of the second peak.}
-		\label{rys:profil_1Hz_amp2}
-	\end{subfigure}
-	
-	\caption{Amplitude of the averaged signal in function of the depth of the electrode for stimulation of 1 Hz. On the left there is an amplitude of first peak  (blue extremum in Fig. \ref{rys:piki_1Hz}), on the right -- amplitude of second peak (red extremum in Fig. \ref{rys:piki_1Hz}). Blue section is a 95\% confidence interval, red line is a mediana, red pluses are outliers.}
-	\label{rys:profil_1Hz_amp}
-\end{figure}
-
-In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak fundamental and frequency and second harmonic in dependence of depth of the electrode is shown. Amplitude of the first peak is the biggest for fifth channel than for the others (Fig. \ref{rys:profil_1Hz_wid1}). Amplitude of the second peak is constant for all channels except the forth one. This channel also has the highest variance (Fig. \ref{rys:profil_1Hz_wid2}).
-
-
-\begin{figure}[H]
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.\linewidth]{profile_1Hz_wid.png}
-		\caption{An amplitude of peak in fundamental frequency.}
-		\label{rys:profil_1Hz_wid1}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.\linewidth]{profile_1Hz_wid2.png}
-		\caption{An amplitude of peak in the second harmonic.}
-		\label{rys:profil_1Hz_wid2}
-	\end{subfigure}
-	
-	\caption{Laminar profile of frequency domain in function of depth of the electrode for 1 Hz stimulation. On the left there is an amplitude of peak in fundamental frequency, on the right -- amplitude of second harmonic. Blue section is a 95\% confidence interval, red line is a mediana, red pluses are outliers. }
-	\label{rys:profil_1Hz_wid}
-\end{figure}
-
-
+    In Figure \ref{rys:profil_1Hz_amp} laminar profile of amplitude of the response in dependence of depth of the electrode is shown. Amplitude of the first peak is very similar among animals and there is a clear change of the sign between the third and the forth channel (Fig. \ref{rys:profil_1Hz_amp1}). Amplitude of the second peak is characterized by a high variance and there is no difference between layers (Fig. \ref{rys:profil_1Hz_amp2}).
+    
+    
+    In Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak fundamental frequency and second harmonic in dependence of depth of the electrode is shown. Amplitude of the first peak is biggest for the fifth channel (Fig. \ref{rys:profil_1Hz_wid1}). Amplitude of the second peak is constant for all channels except for the fourth one. This channel also has the highest variance (Fig.~\ref{rys:profil_1Hz_wid2}).
+    
+    
+    \begin{figure}[H]
+    	\begin{subfigure}{.5\textwidth}
+    		\centering
+    		\includegraphics[width=1.\linewidth]{profile_1Hz_wid.png}
+    		\caption{Fundamental frequency.}
+    		\label{rys:profil_1Hz_wid1}
+    	\end{subfigure}%
+    	\begin{subfigure}{.5\textwidth}
+    		\centering
+    		\includegraphics[width=1.\linewidth]{profile_1Hz_wid2.png}
+    		\caption{Second harmonic.}
+    		\label{rys:profil_1Hz_wid2}
+    	\end{subfigure}
+    	
+    	\caption{Distribution of the amplitude of power spectrum for fundamental frequency (a) and second harmonic (b) as a function of depth of the electrode for 1~Hz stimulation. Meaning of colors and symbols is the same as in Fig.~\ref{rys:profil_1Hz_amp}.}
+    	\label{rys:profil_1Hz_wid}
+    \end{figure}
+    
  
  \section{Analysis of laminar profile for stimulation with 2 Hz}
   
@@ -604,17 +602,17 @@ In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak 
  	\begin{subfigure}{.5\textwidth}
  		\centering
  		\includegraphics[width=1.\linewidth]{profile_2Hz_amp.png}
- 		\caption{}
+ 		\caption{Amplitude of the first peak.}
  		\label{rys:profil_2Hz_amp1}
  	\end{subfigure}%
  	\begin{subfigure}{.5\textwidth}
  		\centering
  		\includegraphics[width=1.\linewidth]{profile_2Hz_amp2.png}
- 		\caption{}
+ 		\caption{Amplitude of the second peak.}
  		\label{rys:profil_2Hz_amp2}
  	\end{subfigure}
  	
- 	\caption{Laminar profile in function of depth of the electrode for 2 Hz stimulation.}
+ 	\caption{Distribution of amplitudes of the first (a) and the second (b) peak across animals as a function of depth of the electrode for 2~Hz stimulation. Meaning of colors and symbols is the same as in Fig.~\ref{rys:profil_1Hz_amp}.}
  	\label{rys:profil_2Hz_amp}
  \end{figure}
 
@@ -624,19 +622,22 @@ In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak 
   	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=1.\linewidth]{profile_2Hz_wid.png}
-  		\caption{}
+  		\caption{Fundamental frequency.}
   		\label{rys:profil_2Hz_wid1}
   	\end{subfigure}%
   	\begin{subfigure}{.5\textwidth}
   		\centering
   		\includegraphics[width=1.\linewidth]{profile_2Hz_wid2.png}
-  		\caption{}
+  		\caption{Second harmonic.}
   		\label{rys:profil_2Hz_wid2}
   	\end{subfigure}
   	
-  	\caption{Laminar profile in function of depth of the electrode for 2 Hz stimulation.}
+  	\caption{Distribution of the amplitude of power spectrum for fundamental frequency (a) and second harmonic (b) as a function of depth of the electrode for 2~Hz stimulation. Meaning of colors and symbols is the same as in Fig.~\ref{rys:profil_1Hz_amp}.}
   	\label{rys:profil_2Hz_wid}
   \end{figure}
+
+	\textbf{Do tego miejsca dałam radę nanieść ponownie poprawki.}
+\newpage  
   
 \section{Analysis of laminar profile for stimulation with 4 Hz} 
    	\begin{figure}[H]
@@ -652,6 +653,7 @@ In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak 
 		\caption{}
 		\label{rys:profil_4Hz_wid2}
 	\end{subfigure}
+
 	
 	\caption{Laminar profile in function of depth of the electrode for 4 Hz stimulation.}
 	\label{rys:profil_4Hz_wid}
@@ -714,10 +716,11 @@ In the Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak 
     
     First of all, it is worth mentioning that even though all recordings were performed on the same structure, using the same electrode, brain anatomy differs between subjects. Individual channels were chosen for analysis based on the pattern of visual potential so there is no guarantee that one channel represents exactly the same structure for every animal. The same concerns the method of recording signal---local field potential is spatially an inaccurate method because it gathers signal from quite a big area of the brain, possibly spanning over multiple structures. On the other hand, this experiment was performed on a group of six animals and the obtained results are coherent and repeatable. Especially the latter confirms that the conclusions are correct. 
     
-    Analysis of averaged signal for 1 Hz and 2 Hz indicates that there is a clear difference in amplitude of the first peak between supra- and infragranular layers. It can be a result of the fact that magnocellular channel enters from LGN mainly to layer IV of VCx and information from there propagates the further the bigger amplitude gets. For both stimulations there was a high variance of the amplitude of the second peak between animals, but there was no significant difference across the layers. Although the results of averaged potentials are similar for both low-frequency stimulations, there are substantial differences in the peaks for fundamental frequency and second harmonic. For 1 Hz stimulation channel 5 exhibited the highest amplitude and variance of fundamental frequency, while for 2 Hz stimulation channel 4 had the lowest value and variance. The same concerns second harmonic: for 1 Hz stimulation all channels had similar values except channel 4 which stood out having the highest variance. For 2 Hz stimulation the situation was quite opposite---channel 4 exhibited the lowest variance. Those contradictory effects may be a result of improper method of analysis. On the other hand, they could be due to high amplitude of low frequencies which are present in a sleeping animal so that low frequency of stimulation may be not enough to stand out (\cite{ja}).
+    Analysis of averaged signal for 1 Hz and 2 Hz indicates that there is a clear difference in amplitude of the first peak between supra- and infragranular layers. It can be a result of the fact that magnocellular channel enters from LGN mainly to layer IV of VCx. For both stimulations there was a high variance of the amplitude of the second peak between animals, but there was no significant difference across the layers. Although the results of averaged potentials are similar for both low-frequency stimulations, there are substantial differences in the peaks for fundamental frequency and second harmonic. For 1 Hz stimulation channel 5 exhibited the highest amplitude and variance of fundamental frequency, while for 2 Hz stimulation channel 4 had the lowest value and variance. The same concerns the second harmonic: for 1 Hz stimulation all channels had similar values except channel 4 which stood out having the highest variance. For 2 Hz stimulation the situation was quite opposite---channel 4 exhibited the lowest variance. Those contradictory effects may be a result of improper method of analysis. On the other hand, they could be due to high amplitude of low frequencies which are present in a sleeping animal so that low frequency of stimulation may be not enough to stand out (\cite{ja}).
     
-    For stimulation with frequency higher than 2 Hz the amplitude of peak in averaged signal was not calculated because stimulus occurred to often to generate full response and it was not possible to determine the peak. During analysis in the frequency domain the same tendency for all frequencies was observed. It is noticeable already for fundamental frequency, but for second harmonic it is much more apparent: channel 4 is characterized by the biggest amplitude and has lower variance than other channels. It also may be a cause of magnocellular entrance in layer IV in VCx.
-    ...
+    For stimulation with frequency higher than 2 Hz the amplitude of the peak in the averaged signal was not calculated because stimulus occurred to often to generate full response and it was not possible to determine the peak. During the analysis in the frequency domain the same tendency for all frequencies was observed. It is noticeable already for fundamental frequency, but for second harmonic it is much more apparent: channel 4 is characterized by the biggest amplitude and has lower variance than other channels. It also may be a cause of magnocellular entrance in layer IV in VCx.
+    
+    Results obtained for CSD are consistent with study on macaque VCx (\cite{maier2011}). Although the authors used a longer flash (100-ms-long flashing screen) they also observed the initial current sink in response to the stimulus in layer IV. Unfortunately that study analyzed only on first 0.2~s after stimulus so the rest of the data could not be compared with our results. 
     
 
 \printbibliography[heading=bibintoc]
