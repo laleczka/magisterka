@@ -14,8 +14,8 @@
 
 
 \def\@baseclass{report}
-\def\@rodzajpracy{thesis}
-\DeclareOption{magisterska}{\def\@rodzajpracy{thesis}}
+\def\@rodzajpracy{magisterska}
+\DeclareOption{magisterska}{\def\@rodzajpracy{magisterska}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{\@baseclass}}
 \PassOptionsToClass{a4paper,twoside,openright,11pt}{\@baseclass}
 \ProcessOptions
@@ -35,38 +35,38 @@
 \marginparwidth15mm
 
 \renewcommand\maketitle{%
-  \begin{titlepage}%
-    \let\footnotesize\small
-    \let\footnoterule\relax
-    \let \footnote \thanks
-    \begin{center}%
-      {\LARGE\textbf{University of Warsaw\\
-        Faculty of Physics}\par}
-      \vspace{1cm plus 1fill} 
-      {\Large\@author\par}
-      \vspace{0.2cm}
-      {\large Student's book no.: \@nralbumu\par}
-      \vspace{8mm plus .1fill}
-      {\Huge\textbf{\@title}\par}
-      \vspace{8mm plus .1fill}
-      {\large Master's degree \@rodzajpracy\\[3pt]
-        field of study 
-        {\@kierunek} \\
-        speciality \@specjalnosc
-       \@zakres 
-        \par}
-      \vspace{2cm plus 1.5fill}
-      \begin{flushright}\large
-        \begin{tabular}{l}
-          The thesis written under the supervision of\\
-           \@opiekun
-        \end{tabular}
-      \end{flushright}
-      \vspace{1cm plus 1fill}
-      {\large Warsaw, \@date\par}
-    \end{center}
-    \@thanks
-  \end{titlepage}%
+	\begin{titlepage}%
+		\let\footnotesize\small
+		\let\footnoterule\relax
+		\let \footnote \thanks
+		\begin{center}%
+			{\LARGE\textbf{Uniwersytet Warszawski\\
+					Wydzia\l{} Fizyki}\par}
+			\vspace{1cm plus 1fill} 
+			{\Large\@author\par}
+			\vspace{0.2cm}
+			{\large Nr albumu: \@nralbumu\par}
+			\vspace{8mm plus .1fill}
+			{\Huge\textbf{\@title}\par}
+			\vspace{8mm plus .1fill}
+			{\large Praca \@rodzajpracy\\[3pt]
+				na kierunku 
+				{\@kierunek} \\
+				specjalno\'s\'c \@specjalnosc
+				\@zakres 
+				\par}
+			\vspace{2cm plus 1.5fill}
+			\begin{flushright}\large
+				\begin{tabular}{l}
+					Praca wykonana pod kierunkiem\\
+					\@opiekun
+				\end{tabular}
+			\end{flushright}
+			\vspace{1cm plus 1fill}
+			{\large Warszawa, \@date\par}
+		\end{center}
+		\@thanks
+	\end{titlepage}%
   \begin{titlepage}
     \c@page=2
     \large

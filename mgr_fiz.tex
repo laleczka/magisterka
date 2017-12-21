@@ -60,28 +60,28 @@
 
 \tytulang{Analiza profilu warstowego potencjałów wywołanych w korze wzrokowej szczura}
 
-\kierunek{Applications of Physics in Biology and Medicine}
+\kierunek{Zastosowania fizyki w biologii i medycynie}
 
-\specjalnosc{Neuroinformatics}
+\specjalnosc{Neuroinformatyka}
 
-\opiekun{Jarosław Żygierewicz, Ph.D. 
-	\\Biomedical Physics Division
-	\\Instytute of Experimental Physics
-	\\Faculty of Physics, University of Warsaw
-	\\and
-	\\prof. Wioletta Waleszczyk
-	\\Laboratory of Visual Neurobiology
-	\\Department of Neurophysiology
-	\\Nencki Institute of Experimental Biology PAS }
+\opiekun{Dra hab. Jarosława Żygierewicza,
+	\\Zakład Fizyki Biometycznej
+	\\Instytut Fizyki Doświadczalnej
+	\\Wydział Fizyki, Uniwersytet Warszawski
+	\\oraz
+	\\Prof. dr hab. Wioletty Waleszczyk,
+	\\Pracownia Neurobiologii Widzenia
+	\\Zakład Neurofizjologii
+	\\Instytut Biologii Doświadczalnej im. Nenckiego, PAN }
 
 %\dziedzina{13.200}
 \dziedzina{13.2 Physics}
 
-\date{December 2017}
+\date{Grudzień 2017}
 
-\keywords{electrophysiology, visual system, primary visual cortex, visual stimulation, local field potential, current source density, temporal frequency \\
-	elektrofizjologia, układ wzrokowy, pierwszorzędowa kora wzrokowa, stymulacja wzrokowa, lokalny potencjał polowy, current source density, częstotliwość czasowa \\
-		\textbf{po polsku czy po ang?}}
+
+
+\keywords{electrophysiology, visual system, primary visual cortex, visual stimulation, local field potential, current source density, temporal frequency}
 
 \bibliography{bibliografia}
 
@@ -92,7 +92,7 @@
     \let\cleardoublepage\clearpage
     
     \begin{abstract}
-
+    In this work responses to visual stimulation with 6 different temporal frequencies from range 1--12 Hz were analyzed. Stimuli (flashing LED light) were applied in 5-second-long series with random (2--3 s) breaks between them. Results from selected channels were presented as averaged potentials, power spectra and current source density which allowed to find differences in laminar profile. For low frequencies $i.e.$ 1 and 2 Hz in averaged potentials there is a clear repolarization in layer IV of primary visual cortex. For higher frequencies in amplitude of  peaks in fundamental frequency and second harmonic in power spectra the following tendency could be observed: upper- and lowermost channels exhibit low amplitudes, while highest amplitudes are reached in the middle channels. Difference between low and high frequencies are also visible in current source density. For 1 and 2 Hz there is a change in polarization by each repetition of stimulus. For stimulation with higher frequency sinks and sources are distinguishable only during first 1.5 s but just after  stimulation, there is a clear change of polarization.
 
      \end{abstract}
 
@@ -101,12 +101,12 @@
     
     \chapter*{Goal}
     \addcontentsline{toc}{chapter}{Goal}
-    The main goal of this work was to study responses of neurons from particular layers of visual cortex to visual stimulation with different temporal frequency.
+    The main goal of this work was to study the responses of neurons from particular layers of the visual cortex to visual stimulation with different temporal frequencies.
     
    \chapter{Introduction}
    
    \section{Structure of the visual system}
-   Visual perception is an ability to process information coded by light. There are two largely independent visual pathways. Both begin in retina where light is converted into electrical discharge by photoreceptors and then the information is transferred to ganglion cells and then further via the optic nerve (Fig.~\ref{rys:neural_circuitry}). Here the pathways split. The first one, known as geniculate visual pathway, leads via the dorsal part of lateral geniculate nucleus (LGN) to primary visual cortex (VCx), and from there further to higher-order cortex. The second pathway, known as extrageniculate visual pathway, leads through superior colliculus and the lateral posterior nucleus-pulvinar complex and then---similarly to the first pathway---reaches primary visual cortex and the higher-order cortex (\cite{viola, thomsonlayer6}). 
+   Visual perception is an ability to process information coded by light. There are two largely independent visual pathways. Both begin in the retina where light is converted into electrical discharges by photoreceptors and then the information is transferred to ganglion cells and then further via the optic nerve (Fig.~\ref{rys:neural_circuitry}). Here the pathways split. The first one, known as geniculate visual pathway, leads via the dorsal part of lateral geniculate nucleus (LGN) to primary visual cortex (VCx), and from there further to higher-order cortices. The second pathway, known as extrageniculate visual pathway, leads through superior colliculus and the lateral posterior nucleus-pulvinar complex and then---similarly to the first pathway--- the higher-order cortices (\cite{viola, thomsonlayer6}). 
    \begin{figure}[htbp]
    	\begin{center}
    		\includegraphics[scale=0.9]{neural_circuitry.png}
@@ -140,11 +140,11 @@
    	\caption{Three most important morphological classes of ganglion cells  (Drawing on the basis of \cite{parallel}).}
    	\label{rys:ganglio}
    \end{figure}
-   Magnocellular cells (Fig. \ref{rys:magno}) have big soma with large dendritic tree. Thanks to thick axon this type of cells can recognize fast stimuli but have poor spatial frequency. Parvocellular cells are cells with medium soma (Fig. \ref{rys:parvo}). They are characterized by high resolution spatial frequency due to small dendritic size, but weak temporal frequency resolution. Koniocellular cells are heterogeneous group of cells with small-to-medium somata of different dendritic morphologies (Fig. \ref{rys:konio}; \cite{parallel, viola}). 
+   Magnocellular cells (Fig. \ref{rys:magno}) have big somas with large dendritic trees. Thanks to thick axon, this type of cells can recognize fast stimuli but have poor spatial frequency resolution. Parvocellular cells are cells with medium somas (Fig. \ref{rys:parvo}). They are characterized by high resolution of spatial frequency due to size of dendritic trees, but weak temporal frequency resolution. Koniocellular cells are a heterogeneous group of cells with small-to-medium somata and different dendritic morphologies (Fig. \ref{rys:konio}; \cite{parallel, viola}). 
    
    
-   \section{Architecture of primary visual cortex}
-   Primary visual cortex can be divided into six vertical layers differing from one another in function and morphology. Sometimes layers II and III are considered to be one layer II/III. Parallel processing is continued from retina via LGN to VCx. Magnocellular channel enters mainly to layer IV but also to layer VI; parvocellular channel enters layers IV (lower than magnocellular) and VI (higher than magnocellular); koniocellular channel enters layers I, II/III and V (Fig. \ref{rys:lgn}; \cite{parallel}).
+   \section{Architecture of the primary visual cortex}
+   Primary visual cortex can be divided into six layers differing from one another in function and morphology. Sometimes layers II and III are considered to be one layer II/III. Parallel processing is continued from retina via LGN to VCx. Magnocellular channel enters mainly to layer IV but also to layer VI; parvocellular channel enters layers IV (lower than magnocellular) and VI (higher than magnocellular); koniocellular channel enters layers I, II/III and V (Fig. \ref{rys:lgn}; \cite{parallel}).
    
    \begin{figure}[H]
    	\begin{center}
@@ -154,7 +154,7 @@
    	\label{rys:lgn}
    \end{figure}  
    \newpage
-   Other division can be made based on granule cells located in layer IV. These cells are characterized by very small cell bodies. Layers above layer IV are called \emph{supragranular} while layers below are referred to as \emph{infragranular}. Around layer IV there is a polarization change observable on averaged evoked potentials (\cite{maier2010}). In layer I cell bodies are absent but there are plenty of axons, dendrites, and synapses. Two major classes of cortical cells are pyramidal cells which occur in all layers except I and IV, and stellate cells which are found in all layers (Fig. \ref{rys:morphology_neurons}).
+   Other division can be made based on granule cells located in layer IV. These cells are characterized by very small cell bodies. Layers above layer IV are called \emph{supragranular}, while layers below are referred to as \emph{infragranular}. Around layer IV there is a polarization change observable on averaged evoked potentials (\cite{maier2010}). In layer I cell bodies are absent but there are plenty of axons, dendrites, and synapses. Two major classes of cortical cells are pyramidal cells which occur in all layers except I and IV, and stellate cells which are found in all layers (Fig. \ref{rys:morphology_neurons}).
    
    \begin{figure}[H]
    	\begin{center}
@@ -179,7 +179,7 @@
    	\label{rys:VCx_LFPs}
    \end{figure} 
    
-   Postsynaptic potentials are potentials generated in the postsynaptic membrane of a dendrite of a nerve cell. They can be either excitatory (Excitatory Post-Synaptic Potentials, EPSPs)---that enhance chance of induces action potentials---or inhibitory (Inhibitory Post-Synaptic Potentials, IPSPs)---making action potential less likely to happen. There are lots of potentials reaching every neuron. When the sum of them exceeds a threshold the neuron becomes excited and generates an action potential which propagates along axon (Fig. \ref{rys:PSPs}).
+   Postsynaptic potentials are potentials generated in the postsynaptic membrane of a dendrite of a nerve cell. They can be either excitatory (Excitatory Post-Synaptic Potentials, EPSPs)---that enhance chance of induction of action potentials---or inhibitory (Inhibitory Post-Synaptic Potentials, IPSPs)---making action potential less likely to happen. There are lots of potentials reaching every neuron. When the sum of them exceeds a threshold the neuron becomes excited and generates an action potential which propagates along axon (Fig. \ref{rys:PSPs}).
    \begin{figure}[htbp]
    	\begin{center}
    		\includegraphics[scale=1]{PSPs.png}
@@ -194,9 +194,9 @@
    
    
    \section{Surgical procedures}
-   Animals under deep urethane anesthesia (1.5 g/kg, Sigma-Aldrich, Germany, 30\% aqueous solution, i.p) were placed in a stereotaxic apparatus. Additional doses of urethane (0.15~g/kg) were administered when necessary. Body temperature was maintained between 36 and 38 \degree C using an automatically controlled electric heating blanket. Every hour fluid requirements were fulfilled by subcutaneous injections of 0.9\% NaCl (1ml/hour) and eyes were humidified with Vidisic (Polfa Warszawa S.A., Poland) to prevent cornea from drying. The skin on the head was disinfected with iodine and local anesthetic with 1\% lidocaine hydrochloride (0.5 ml, Polfa Warszawa S.A., Poland) was injected over the scalp. The skull was opened to expose areas of the binocular primary VCx (7.5 mm posterior to bregma, 5.0 mm lateral) in left hemisphere. Coordinates of electrode were chosen based on the rat brain atlas (\cite{atlas}). 
+   Animals under deep urethane anesthesia (1.5 g/kg, Sigma-Aldrich, Germany, 30\% aqueous solution, i.p) were placed in a stereotaxic apparatus. Additional doses of urethane (0.15~g/kg) were administered when necessary. Body temperature was maintained between 36 and 38 \degree C using an automatically controlled electric heating blanket. Every hour fluid requirements were fulfilled by subcutaneous injections of 0.9\% NaCl (1ml/hour) and eyes were humidified with Vidisic (Polfa Warszawa S.A., Poland) to prevent cornea from drying. The skin on the head was disinfected with iodine and local anesthetic 1\% lidocaine hydrochloride (0.5 ml, Polfa Warszawa S.A., Poland) was injected over the scalp. The skull was opened to expose areas of the binocular primary VCx (7.5 mm posterior to bregma, 5.0 mm lateral) in left hemisphere. Coordinates of electrode were chosen based on the rat brain atlas (\cite{atlas}). 
    
-   \section{Stimulation electrode}
+   \section{Recording electrode}
    For all experiments the same custom vertical electrode made of tungsten was used (Fig.~\ref{rys:electrode}). The electrode had 12 channels but only recordings from 7 of them were used for analysis. Particular channels of the electrode were chosen independently for each rat and the choice was made after the recording. This procedure was motivated by previous experiments which had shown that it is very difficult to insert the electrode in such a way that a predetermined channel corresponds to layer IV. The cause for this difficulty is that layer IV is very thin. It is also the reason why upper contacts of the electrode were located more densely (0.1 mm intervals) than the lower ones (0.2 mm intervals).
    
    \begin{figure}[H]
@@ -238,7 +238,7 @@
    	\begin{center}
    		\includegraphics[scale=0.5]{paradigms.png}
    	\end{center}
-   	\caption{ Stimulation protocol. The stimuli were presented in 5 s long 40 series at given frequency (from 1 to 12 Hz). The number of stimuli in a series depends on frequency.}
+   	\caption{ Stimulation protocol. The stimuli were presented in 5 s long 40 series at given frequency (from 1 to 12 Hz). The number of stimuli in a series depended on frequency.}
    	\label{rys:stimuli}
    \end{figure} 
    
@@ -262,10 +262,10 @@
    	\item there were differences of depth of electrodes and layer IV was recorded by different channels.
    \end{itemize} 
    
-   The choice was made basing on analysis on the averaged evoked potentials. The referential depth was established by a channel where repolarization was observed right after the occurrence of the stimulus. This channel was assumed to be recorded from layer IV. Then 3 other channels above the reference and 3 more below were chosen, possibly maximally scattered, but avoiding channels which exhibited any distortion. This method is a simplified version of the one introduced by (\cite{maier2011}).
+   The choice was made based on analysis of the averaged evoked potentials. The referential depth was established by a channel where repolarization was observed right after the occurrence of the stimulus. This channel was assumed to be recorded from layer IV. Then 3 other channels above the reference and 3 more below were chosen, possibly maximally scattered, but avoiding channels which exhibited any distortion. This method is a simplified version of the one introduced by (\cite{maier2011}).
    
    
-   \section{Averaging visual potentials}
+   \section{Averaging of visual potentials}
    
    \subsection{Description of the method}
    Visual Evoked Potential (VEP) is a case of steady state evoked potential where light is the stimulus. Theoretically, spontaneous activity of ECoG is a stochastic process (independent, stationary noise with mean equal to zero) and brain response to each stimulus is constant. 
@@ -323,7 +323,7 @@
    
    
    \section{Current Source Density}
-   To localize synaptic dynamics it is convenient, whenever possible, to estimate the density of transmembrane current sources (CSD) generating the LFP. Let us assume that we record potential in infinitive, homogeneous ans isotropic conductive medium. Current $I$ in that tissue has current density $\vv{J}$ given by equation:
+   To localize synaptic dynamics it is convenient, whenever possible, to estimate the density of transmembrane current sources (CSD) generating the LFP. Let us assume that we record potential in infinitive, homogeneous and isotropic conductive medium. Current $I$ in that tissue has current density $\vv{J}$ given by equation:
    \begin{equation}
    \vv{J}= \frac{I \vv{r}}{4\pi r^2}
    \end{equation}
@@ -352,7 +352,7 @@
    \begin{equation}
    C(\vv{r})=-\nabla \cdot [\sigma \nabla V].
    \end{equation}
-   In this work to calculate CSD the method introduced by Jan Potworowski called \textit{kernel Current Source Density} (kCSD) was used (\cite{wojcik, potworowski}).
+   In this work to calculate CSD the method introduced by Jan Potworowski called \textit{kernel Current Source Density} (kCSD) was used (\cite{potworowski, wojcik}).
     
     \chapter{Results}
 	In Sections \ref{sec:time} and \ref{sec:freq} all results were presented in the same way. On Figure~\ref{rys:przyklad_odch} an example of used method is shown on the evoked potentials in channel 4 of Rat1.
@@ -545,12 +545,13 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
         The reverse of potential in layer IV of VCx can be observed (Fig. \ref{rys:srednie_1Hz_1s}). Granular layer (always 4\textsuperscript{th} subfigure) is characterized by the most diverse responses to the stimulation within this group of animals. It can be noticed that first peak of the response is stable whereas second peak is more varied. 
     \begin{figure}[H]
     	\centering
-    	\includegraphics[scale=0.4]{usrednianie_z_tlem.png}
+    	\includegraphics[scale=0.35]{usrednianie_z_tlem.png}
     	\caption{Laminar profile of the response amplitude as a function of depth of the electrode for 1 Hz stimulation. All experiments averaged by 40 trials in time domain---bold line. Differences between animals are by the standard deviation. Time 0 s indicates beginning of 5 s constant stimulation (here only 0.8 s is shown). First and second peak are marked by blue and purple background respectively.}
     	\label{rys:srednie_1Hz_1s}
     \end{figure}
     
- 
+     In Figure \ref{rys:profil_1Hz_amp} laminar profile of amplitude of the response in dependence of depth of the electrode is shown. Amplitude of the first peak is very similar among animals and there is a clear change of the sign between the third and the forth channel (Fig. \ref{rys:profil_1Hz_amp1}). Amplitude of the second peak is characterized by a high variance and there is no difference between layers (Fig. \ref{rys:profil_1Hz_amp2}).
+     
     \begin{figure}[H]
     	\begin{subfigure}{.5\textwidth}
     		\centering
@@ -569,7 +570,7 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
     	\label{rys:profil_1Hz_amp}
     \end{figure}
 
-    In Figure \ref{rys:profil_1Hz_amp} laminar profile of amplitude of the response in dependence of depth of the electrode is shown. Amplitude of the first peak is very similar among animals and there is a clear change of the sign between the third and the forth channel (Fig. \ref{rys:profil_1Hz_amp1}). Amplitude of the second peak is characterized by a high variance and there is no difference between layers (Fig. \ref{rys:profil_1Hz_amp2}).
+
     
     
     In Figure \ref{rys:profil_1Hz_wid} laminar profile of amplitude of the peak fundamental frequency and second harmonic in dependence of depth of the electrode is shown. Amplitude of the first peak is biggest for the fifth channel (Fig. \ref{rys:profil_1Hz_wid1}). Amplitude of the second peak is constant for all channels except for the fourth one. This channel also has the highest variance (Fig.~\ref{rys:profil_1Hz_wid2}).
@@ -636,10 +637,11 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
   	\label{rys:profil_2Hz_wid}
   \end{figure}
 
-	\textbf{Do tego miejsca dałam radę nanieść ponownie poprawki.}
-\newpage  
   
 \section{Analysis of laminar profile for stimulation with 4 Hz} 
+
+ In the Figure \ref{rys:profil_4Hz_wid} laminar profile of amplitude of peak in 4 and 8 Hz in dependence of depth of the electrode for stimulation of 4 Hz is shown. For both frequencies median has the biggest value for forth channel. The following tendency could be observed: upper- and lowermost channels exhibit low amplitudes, while highest amplitudes are reached in the middle channels. 
+
    	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -653,12 +655,15 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
 		\caption{}
 		\label{rys:profil_4Hz_wid2}
 	\end{subfigure}
-
-	
-	\caption{Laminar profile in function of depth of the electrode for 4 Hz stimulation.}
+	\caption{Distribution of the amplitude of power spectrum for fundamental frequency (a) and second harmonic (b) as a function of depth of the electrode for 4~Hz stimulation. Meaning of colors and symbols is the same as in Fig.~\ref{rys:profil_1Hz_amp}.}
 	\label{rys:profil_4Hz_wid}
 \end{figure}
+
 \section{Analysis of laminar profile for stimulation with 7 Hz}  
+
+In the Figure \ref{rys:profil_7Hz_wid} laminar profile of amplitude of peak in 7 and 14 Hz in dependence of depth of the electrode for stimulation of 7 Hz is shown. As well as for 4 Hz, in the stimulation with 7 Hz the biggest median is for forth channel. But due to high variance for distribution of the amplitude of fundamental frequency only for second harmonic there is the same tendency  as observed for 4 Hz.
+
+
    	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -672,11 +677,13 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
 		\caption{}
 		\label{rys:profil_7Hz_wid2}
 	\end{subfigure}
-	
-	\caption{Laminar profile in function of depth of the electrode for 7 Hz stimulation.}
+	\caption{Distribution of the amplitude of power spectrum for fundamental frequency (a) and second harmonic (b) as a function of depth of the electrode for 7~Hz stimulation. Meaning of colors and symbols is the same as in Fig.~\ref{rys:profil_1Hz_amp}.}
 	\label{rys:profil_7Hz_wid}
 \end{figure}
 \section{Analysis of laminar profile for stimulation with 10 Hz}  
+
+In the Figure \ref{rys:profil_10Hz_wid} laminar profile of amplitude of peak in 10 and 20 Hz in dependence of depth of the electrode for stimulation of 10 Hz is shown. For both fundamental frequency and second harmonic there is clear tendency as for 4 Hz--- the highest amplitude is for forth channel and the farther channel is from the middle has the lower amplitude.
+
    	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -690,11 +697,12 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
 		\caption{}
 		\label{rys:profil_10Hz_wid2}
 	\end{subfigure}
-	
-	\caption{Laminar profile in function of depth of the electrode for 10 Hz stimulation.}
+	\caption{Distribution of the amplitude of power spectrum for fundamental frequency (a) and second harmonic (b) as a function of depth of the electrode for 10~Hz stimulation. Meaning of colors and symbols is the same as in Fig.~\ref{rys:profil_1Hz_amp}.}
 	\label{rys:profil_10Hz_wid}
 \end{figure}
 \section{Analysis of laminar profile for stimulation with 12 Hz}  
+In the Figure \ref{rys:profil_12Hz_wid} laminar profile of amplitude of peak in 12 and 24 Hz in dependence of depth of the electrode for stimulation of 12 Hz is shown. For both frequencies tendency is the same as for the other stimulations with high frequencies.
+
    	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -708,13 +716,15 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
 		\caption{}
 		\label{rys:profil_12Hz_wid2}
 	\end{subfigure}
-	
-	\caption{Laminar profile in function of depth of the electrode for 12 Hz stimulation.}
+	\caption{Distribution of the amplitude of power spectrum for fundamental frequency (a) and second harmonic (b) as a function of depth of the electrode for 12~Hz stimulation. Meaning of colors and symbols is the same as in Fig.~\ref{rys:profil_1Hz_amp}.}
 	\label{rys:profil_12Hz_wid}
 \end{figure}
     \chapter{Discussion}
+    In this work responses to visual stimulation with 6 different temporal frequencies from range 1--12 Hz on 6 Wistar rats were studied. Results were presented as averaged potentials, power spectra and current source density, which allowed to find differences in laminar profile.
     
-    First of all, it is worth mentioning that even though all recordings were performed on the same structure, using the same electrode, brain anatomy differs between subjects. Individual channels were chosen for analysis based on the pattern of visual potential so there is no guarantee that one channel represents exactly the same structure for every animal. The same concerns the method of recording signal---local field potential is spatially an inaccurate method because it gathers signal from quite a big area of the brain, possibly spanning over multiple structures. On the other hand, this experiment was performed on a group of six animals and the obtained results are coherent and repeatable. Especially the latter confirms that the conclusions are correct. 
+    It is worth mentioning that even though all recordings were performed on the same structure, using the same electrode, brain anatomy differs between subjects. Individual channels were chosen for analysis based on the pattern of visual potential so there is no guarantee that one channel represents exactly the same structure for every animal. The same concerns the method of recording signal---local field potential is a spatially inaccurate method because it gathers signal from quite a big area of the brain, possibly spanning over multiple structures. On the other hand, this experiment was performed on a group of six animals and the obtained results are coherent and repeatable. Especially the latter confirms that the conclusions are correct. 
+    
+    Analysis in time domain for low frequencies seems to be adequate, as it was observed that only for stimulus with intervals longer than 400 ms the response to second repetition of stimulus is as strong as to the first one (\cite{retino}).
     
     Analysis of averaged signal for 1 Hz and 2 Hz indicates that there is a clear difference in amplitude of the first peak between supra- and infragranular layers. It can be a result of the fact that magnocellular channel enters from LGN mainly to layer IV of VCx. For both stimulations there was a high variance of the amplitude of the second peak between animals, but there was no significant difference across the layers. Although the results of averaged potentials are similar for both low-frequency stimulations, there are substantial differences in the peaks for fundamental frequency and second harmonic. For 1 Hz stimulation channel 5 exhibited the highest amplitude and variance of fundamental frequency, while for 2 Hz stimulation channel 4 had the lowest value and variance. The same concerns the second harmonic: for 1 Hz stimulation all channels had similar values except channel 4 which stood out having the highest variance. For 2 Hz stimulation the situation was quite opposite---channel 4 exhibited the lowest variance. Those contradictory effects may be a result of improper method of analysis. On the other hand, they could be due to high amplitude of low frequencies which are present in a sleeping animal so that low frequency of stimulation may be not enough to stand out (\cite{ja}).
     
