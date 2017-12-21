@@ -42,7 +42,7 @@
 
 %\usepackage[round]{natbib}   % omit 'round' option if you prefer square brackets
 %\bibliographystyle{plainnat}
-\usepackage[maxcitenames=2, backend=biber, style=authoryear]{biblatex}
+\usepackage[maxcitenames=2, backend=biber, style=authoryear, uniquelist=false]{biblatex}
 \renewcommand*{\nameyeardelim}{\addcomma\space}
 %\renewcommand*{\nameyeardelim}{\addcomma\space}
 
@@ -101,8 +101,10 @@
     
     \chapter*{Goal}
     \addcontentsline{toc}{chapter}{Goal}
-    The main goal of this work was to study the responses of neurons from particular layers of the visual cortex to visual stimulation with different temporal frequencies.
     
+    The main goal of this work was to study the responses of neurons from particular layers of the visual cortex to visual stimulation with different temporal frequencies. Several works have been recently published in this field, either focusing on single layer using multiple stimuli (\cite{cooke_bear}), or analyzing the complete profile but with single stimulus only (\cite{maier2011}). The aim of this work was to combine these approaches---analyze multiple layers using multiple stimuli---in order to obtain the complete laminar profile of primary visual cortex.
+    
+
    \chapter{Introduction}
    
    \section{Structure of the visual system}
@@ -722,15 +724,17 @@ In the Figure \ref{rys:profil_12Hz_wid} laminar profile of amplitude of peak in 
     \chapter{Discussion}
     In this work responses to visual stimulation with 6 different temporal frequencies from range 1--12 Hz on 6 Wistar rats were studied. Results were presented as averaged potentials, power spectra and current source density, which allowed to find differences in laminar profile.
     
-    It is worth mentioning that even though all recordings were performed on the same structure, using the same electrode, brain anatomy differs between subjects. Individual channels were chosen for analysis based on the pattern of visual potential so there is no guarantee that one channel represents exactly the same structure for every animal. The same concerns the method of recording signal---local field potential is a spatially inaccurate method because it gathers signal from quite a big area of the brain, possibly spanning over multiple structures. On the other hand, this experiment was performed on a group of six animals and the obtained results are coherent and repeatable. Especially the latter confirms that the conclusions are correct. 
+    It is worth mentioning that even though all recordings were performed on the same structure, using the same electrode, brain anatomy differs between subjects. Individual channels were chosen for analysis based on the pattern of visual potential so there is no guarantee that one channel represents exactly the same location for every animal. The same concerns the method of recording signal---local field potential is a spatially inaccurate method because it gathers signal from quite a big area of the brain. On the other hand, this experiment was performed on a group of six animals and the obtained results are coherent and repeatable. Especially the latter confirms that the conclusions are correct. 
     
     Analysis in time domain for low frequencies seems to be adequate, as it was observed that only for stimulus with intervals longer than 400 ms the response to second repetition of stimulus is as strong as to the first one (\cite{retino}).
     
-    Analysis of averaged signal for 1 Hz and 2 Hz indicates that there is a clear difference in amplitude of the first peak between supra- and infragranular layers. It can be a result of the fact that magnocellular channel enters from LGN mainly to layer IV of VCx. For both stimulations there was a high variance of the amplitude of the second peak between animals, but there was no significant difference across the layers. Although the results of averaged potentials are similar for both low-frequency stimulations, there are substantial differences in the peaks for fundamental frequency and second harmonic. For 1 Hz stimulation channel 5 exhibited the highest amplitude and variance of fundamental frequency, while for 2 Hz stimulation channel 4 had the lowest value and variance. The same concerns the second harmonic: for 1 Hz stimulation all channels had similar values except channel 4 which stood out having the highest variance. For 2 Hz stimulation the situation was quite opposite---channel 4 exhibited the lowest variance. Those contradictory effects may be a result of improper method of analysis. On the other hand, they could be due to high amplitude of low frequencies which are present in a sleeping animal so that low frequency of stimulation may be not enough to stand out (\cite{ja}).
+    Analysis of averaged signal for 1 Hz and 2 Hz indicates that there is a clear difference in amplitude of the first peak between supra- and infragranular layers. Supragranular layers are characterized by positive amplitude, while infragranular by negative. It can be a result of the fact that magnocellular channel enters from LGN mainly to layer IV of VCx. For both 1 Hz and 2 Hz stimulations there was a high variance of the amplitude of the second peak between animals. Although the results of averaged potentials are similar for both low-frequency stimulations, there are substantial differences in the peaks for fundamental frequency and second harmonic. For 1 Hz stimulation channel 5 exhibited the highest amplitude and variance of fundamental frequency, while for 2 Hz stimulation channel 4 had the lowest value and variance. The same concerns the second harmonic: for 1 Hz stimulation all channels had similar values except channel 4 which stood out having the highest variance. For 2 Hz stimulation the situation was quite opposite---channel 4 exhibited the lowest variance. Those contradictory effects may be a result of improper method of analysis. On the other hand, they could be due to high amplitude of low frequencies which are present in a sleeping animal so that low frequency of stimulation may be not enough to stand out (\cite{sellers, ja}).
     
-    For stimulation with frequency higher than 2 Hz the amplitude of the peak in the averaged signal was not calculated because stimulus occurred to often to generate full response and it was not possible to determine the peak. During the analysis in the frequency domain the same tendency for all frequencies was observed. It is noticeable already for fundamental frequency, but for second harmonic it is much more apparent: channel 4 is characterized by the biggest amplitude and has lower variance than other channels. It also may be a cause of magnocellular entrance in layer IV in VCx.
+    For stimulation with frequency higher than 2 Hz the signal forms a continuous oscillation. The amplitude of these oscillations during the first 1.5 s is higher than for the rest of the stimulation. Due to lack of clear peaks after stimuli analysis of evoked potentials could not be performed. The analysis in the frequency domain the same tendency for all frequencies was observed: channel 4 is characterized by the highest amplitude and has lower variance than other channels; upper- and lowermost channels exhibit the lowest amplitudes. This tendency is noticeable for fundamental frequency, but for second harmonic it is much more apparent. It may be a result of magnocellular entrance in layer IV in VCx.
     
     Results obtained for CSD are consistent with study on macaque VCx (\cite{maier2011}). Although the authors used a longer flash (100-ms-long flashing screen) they also observed the initial current sink in response to the stimulus in layer IV. Unfortunately that study analyzed only on first 0.2~s after stimulus so the rest of the data could not be compared with our results. 
+    
+    CSD analysis of low frequency stimulation revealed a clear sink and source after every stimulus and the observed response is consistent with other results (\cite{kozai, maier2010}). In case of high frequencies current flows could be observed only during the first 1.5 s of the stimulation, after which a silencing occurs. Just after the stimulation a big difference in polarization was noticed, which could be due to a suppression resulting from a very strong stimulus.
     
 
 \printbibliography[heading=bibintoc]
