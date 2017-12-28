@@ -26,6 +26,8 @@
 \usepackage{booktabs} %ladne tabelki
 \usepackage{tabularx} %kolumna
 
+\usepackage{enumitem}
+
 \usepackage{placeins}
 \usepackage{tikz}
 
@@ -43,7 +45,7 @@
 
 %\usepackage[round]{natbib}   % omit 'round' option if you prefer square brackets
 %\bibliographystyle{plainnat}
-\usepackage[maxcitenames=2, backend=biber, style=authoryear, uniquelist=false]{biblatex}
+\usepackage[maxcitenames=2, maxbibnames=99, backend=biber, style=authoryear, uniquelist=false]{biblatex}
 \renewcommand*{\nameyeardelim}{\addcomma\space}
 %\renewcommand*{\nameyeardelim}{\addcomma\space}
 
@@ -308,7 +310,7 @@
    In Figure~\ref{rys:amplitude} first channel for the same rat as in Figure~\ref{rys:wybor_pikow} is presented. Amplitude was taken to be the most extreme value (i.e. having the highest absolute value) in a specified time after an occurrence of a stimulus.
    \begin{figure}[H]
    	\begin{center}
-   		\includegraphics[scale=0.5]{amplitude2.png}
+   		\includegraphics[scale=0.45]{usrednianie_z_tlem3.png}
    	\end{center}
    	\caption{Measurement of the peaks amplitude for channel 1 of Rat4 stimulated with 1~Hz. }
    	\label{rys:amplitude}
@@ -320,8 +322,8 @@
    
    \begin{figure}[H]
    	\centering
-   	\includegraphics[scale=0.5]{pik_widmo2.png}
-   	\caption{Measurement of the peak amplitude for channel 1 of Rat4 stimulated with 7~Hz.}
+   	\includegraphics[scale=0.45]{pik_widmo4.png}
+   	\caption{Measurement of the peak amplitude for channel 4 of Rat4 stimulated with 7~Hz.}
    	\label{rys:pik_widmo}
    \end{figure}
    
@@ -370,7 +372,7 @@
 
     \section{Overview of results obtained in the time domain}
     \label{sec:time}
-    Next, there are all experiments with 6 different stimulation frequencies presented one after another. In the Figure \ref{rys:srednie_1_2} results of stimulation with 1 and 2 Hz are presented---there is a clear peak of response after each repetition of stimulus.
+    Next, there are all experiments with 6 different stimulation frequencies presented one after another. In the Figure \ref{rys:srednie_1_2} results of stimulation with 1 and 2 Hz are presented---there is a clear apeak of response after each repetition of stimulus.
     
     \begin{figure}[H]
     \begin{subfigure}{.5\textwidth}
@@ -390,10 +392,18 @@
 	\end{figure}
     
     For frequencies higher than 2 Hz signals look different (Fig. \ref{rys:srednia_czas}). Firstly the response for stimuli is blurred: stimuli occur so often that it is impossible to determine where a response for certain stimulus starts and where it ends. 
-    
-    
-    The signal forms a continuous oscillation. During the first 1.5 s of the stimulation: the amplitude of oscillations is higher than for the rest of the stimulation period. At around 5.15 s there is noticeable peak probably as a response to end of stimulation. 
-    
+    Four stages of signal can be observed: 
+    \begin{itemize}[itemsep=1\itemsep,parsep=1\parsep,partopsep=0pt,topsep=0pt]
+    %\setenumerate{noitemsep}
+    %\begin{enumerate}
+    	\item first potential at the beginning of stimulation
+    	\item continuous oscillation in a shape of a spindle during the first 1.5 s
+    	\item steady state oscillation during the rest of the stimulation
+    	\item last potential just after the stimulation
+    %\end{enumerate}
+	\end{itemize}
+
+
 	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
 		\centering
@@ -428,7 +438,7 @@
     \section{Overview of results obtained in the frequency domain}
     \label{sec:freq}
     
-    Power spectra calculated by Welch's methods are shown in Figures \ref{rys:widmo_1_2} and \ref{rys:srednie_widmo}. For stimulation of 1 Hz there are up to 5 harmonic, and for both 1 and 2 Hz there is so high dispersion that for lowest values there is no difference between peak and zero (Fig. \ref{rys:widmo_1_2}).     
+    Power spectra calculated by Welch's method are shown in Figures \ref{rys:widmo_1_2} and \ref{rys:srednie_widmo}. For stimulation of 1 Hz there are up to 5 harmonics, and for both 1 and 2 Hz there is so high dispersion that for the lowest values there is no difference between peak and zero (Fig. \ref{rys:widmo_1_2}).     
     
     \begin{figure}[H]
     	\begin{subfigure}{.5\textwidth}
@@ -447,7 +457,7 @@
     	\label{rys:widmo_1_2}
     \end{figure}
     
-    For frequencies from range 4 -- 10 Hz, the fundamental frequency and the second harmonic are clean and much bigger than others. Response for 12 Hz in power spectrum is noticeably weaker -- peak in the fundamental frequency is at the same level as low frequency noise (Fig.~\ref{rys:srednie_widmo}).
+    For frequencies from range 4 -- 10 Hz, the fundamental frequency and the second harmonic are clean and much bigger than others. Response for 12 Hz in power spectrum is noticeably weaker---peak in the fundamental frequency is at the same level as low frequency noise (Fig.~\ref{rys:srednie_widmo}).
     
 	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -485,7 +495,8 @@
 \label{sec:csd}
 
 
-Current source density analysis is shown in Figure \ref{rys:csd_1_2} and \ref{rys:csd}. For stimulation of 1 and 2 Hz there is a change in polarization to each repetition of stimulus (Fig.~\ref{rys:csd_1_2}). 
+Current source density analysis averaged across animals is shown in Figure \ref{rys:csd_1_2} and \ref{rys:csd}. For stimulation of 1 and 2 Hz there 
+is a current flow after each repetition of stimulus (Fig.~\ref{rys:csd_1_2}). 
 
     \begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -542,18 +553,18 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
 	\includegraphics[scale=0.4]{legend2.png}
 	\end{subfigure}
 	
-	\caption{Results of CSD for stimulation with low frequencies.}
+	\caption{Results of CSD for stimulation with high frequencies.}
 	\label{rys:csd}
 	
 	\end{figure}
 
     
     \section{Analysis of laminar profile for stimulation with 1 Hz}
-        The reverse of potential in layer IV of VCx can be observed (Fig. \ref{rys:srednie_1Hz_1s}). Granular layer (always 4\textsuperscript{th} subfigure) is characterized by the most diverse responses to the stimulation within this group of animals. It can be noticed that first peak of the response is stable whereas second peak is more varied. 
+        The reverse of potential in layer IV of VCx can be observed (Fig. \ref{rys:srednie_1Hz_1s}). Granular layer (always 4\textsuperscript{th} subfigure) is characterized by the most diverse responses to the stimulation within this group of animals. It can be noticed that the first peak of the response is stable whereas the second peak is more varied. 
     \begin{figure}[H]
     	\centering
     	\includegraphics[scale=0.35]{usrednianie_z_tlem.png}
-    	\caption{Laminar profile of the response amplitude as a function of depth of the electrode for 1 Hz stimulation. All experiments averaged by 40 trials in time domain---bold line. Differences between animals are by the standard deviation. Time 0 s indicates beginning of 5 s constant stimulation (here only 0.8 s is shown). First and second peak are marked by blue and purple background respectively.}
+    	\caption{Laminar profile of the response amplitude as a function of depth of the electrode for 1 Hz stimulation. All experiments averaged across animals in time domain---bold line. Dark blue background is the dispersion from the mean by one standard deviation. Time 0 s indicates beginning of 5 s constant stimulation (here only 0.8~s is shown). The first and the second peak are marked by light blue and purple background respectively.}
     	\label{rys:srednie_1Hz_1s}
     \end{figure}
     
@@ -604,7 +615,7 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
  
  \section{Analysis of laminar profile for stimulation with 2 Hz}
   
-    In the Figure \ref{rys:profil_2Hz_amp} laminar profile of amplitude of response to stimulus in dependence of depth of the electrode for stimulation of 2 Hz is shown. Amplitude of the first peak is very similar among animals except channel 4 where variance is the biggest. (Fig. \ref{rys:profil_2Hz_amp1}). Tendency of amplitude of the second peak is like for 1 Hz: it has a high variance and there is not difference between layers (Fig. \ref{rys:profil_2Hz_amp2}).
+    In the Figure \ref{rys:profil_2Hz_amp} laminar profile of amplitude of response to stimulus in dependence of depth of the electrode for stimulation of 2 Hz is shown. Amplitude of the first peak is very similar among animals except channel 4 where variance is the biggest. (Fig. \ref{rys:profil_2Hz_amp1}). Tendency of amplitude of the second peak is like for 1 Hz: it has a high variance and there is no difference between layers (Fig. \ref{rys:profil_2Hz_amp2}).
   
  	\begin{figure}[H]
  	\begin{subfigure}{.5\textwidth}
@@ -647,7 +658,7 @@ For stimulation of frequency higher than 2 Hz there is a change of polarization 
   
 \section{Analysis of laminar profile for stimulation with 4 Hz} 
 
- In the Figure \ref{rys:profil_4Hz_wid} laminar profile of amplitude of peak in 4 and 8 Hz in dependence of depth of the electrode for stimulation of 4 Hz is shown. For both frequencies median has the biggest value for forth channel. The following tendency could be observed: upper- and lowermost channels exhibit low amplitudes, while highest amplitudes are reached in the middle channels. 
+ In the Figure \ref{rys:profil_4Hz_wid} laminar profile of amplitude of peak in 4 and 8 Hz in dependence of depth of the electrode for stimulation of 4 Hz is shown. For both frequencies median has the biggest value for the forth channel. The following tendency could be observed: upper- and lowermost channels exhibit low amplitudes, while highest amplitudes are reached in the middle channels. 
 
    	\begin{figure}[H]
 	\begin{subfigure}{.5\textwidth}
@@ -727,15 +738,15 @@ In the Figure \ref{rys:profil_12Hz_wid} laminar profile of amplitude of peak in 
 	\label{rys:profil_12Hz_wid}
 \end{figure}
     \chapter{Discussion}
-    In this work responses to visual stimulation with 6 different temporal frequencies from range 1--12 Hz on 6 Wistar rats were studied. Results were presented as averaged potentials, power spectra and current source density, which allowed to find differences in laminar profile.
+    In this work responses to visual stimulation with 6 different temporal frequencies from range 1--12 Hz in 6 Wistar rats were studied. Results were presented as averaged potentials, power spectra and current source density, which allowed to find differences between layers.
     
     It is worth mentioning that even though all recordings were performed on the same structure, using the same electrode, brain anatomy differs between subjects. Individual channels were chosen for analysis based on the pattern of visual potential so there is no guarantee that one channel represents exactly the same location for every animal. The same concerns the method of recording signal---local field potential is a spatially inaccurate method because it gathers signal from quite a big area of the brain. On the other hand, this experiment was performed on a group of six animals and the obtained results are coherent and repeatable. Especially the latter confirms that the conclusions are correct. 
     
     Analysis in time domain for low frequencies seems to be adequate, as it was observed that only for stimulus with intervals longer than 400 ms the response to second repetition of stimulus is as strong as to the first one (\cite{retino}).
     
-    Analysis of averaged signal for 1 Hz and 2 Hz indicates that there is a clear difference in amplitude of the first peak between supra- and infragranular layers. Supragranular layers are characterized by positive amplitude, while infragranular by negative. It can be a result of the fact that magnocellular channel enters from LGN mainly to layer IV of VCx. For both 1 Hz and 2 Hz stimulations there was a high variance of the amplitude of the second peak between animals. Although the results of averaged potentials are similar for both low-frequency stimulations, there are substantial differences in the peaks for fundamental frequency and second harmonic. For 1 Hz stimulation channel 5 exhibited the highest amplitude and variance of fundamental frequency, while for 2 Hz stimulation channel 4 had the lowest value and variance. The same concerns the second harmonic: for 1 Hz stimulation all channels had similar values except channel 4 which stood out having the highest variance. For 2 Hz stimulation the situation was quite opposite---channel 4 exhibited the lowest variance. Those contradictory effects may be a result of improper method of analysis. On the other hand, they could be due to high amplitude of low frequencies which are present in a sleeping animal so that low frequency of stimulation may be not enough to stand out (\cite{sellers, ja}).
+    Analysis of averaged signal for 1 Hz and 2 Hz indicates that there is a clear difference in amplitude of the first peak between supra- and infragranular layers. Supragranular layers are characterized by positive amplitude, while infragranular by negative. It can be a result of the fact that magnocellular channel enters from LGN mainly to layer IV of VCx. For both 1 Hz and 2 Hz stimulations there was a high variance of the amplitude of the second peak between animals. Although the results of averaged potentials are similar for both low-frequency stimulations, there are substantial differences in the peaks for fundamental frequency and second harmonic. For 1 Hz stimulation, channel 5 exhibited the highest amplitude and variance of fundamental frequency, while for 2 Hz stimulation channel 4 had the lowest value and variance. The same concerns the second harmonic: for 1 Hz stimulation, all channels had similar values except channel 4 which stood out having the highest variance. For 2 Hz stimulation, the situation was quite opposite---channel 4 exhibited the lowest variance. Those contradictory effects may be a result of improper method of analysis. On the other hand, they could be due to high amplitude of low frequencies which are present in a sleeping animal so that low frequency of stimulation may be not enough to stand out (\cite{sellers, ja}).
     
-    For stimulation with frequency higher than 2 Hz the signal forms a continuous oscillation. The amplitude of these oscillations during the first 1.5 s is higher than for the rest of the stimulation. Due to lack of clear peaks after stimuli analysis of evoked potentials could not be performed. The analysis in the frequency domain the same tendency for all frequencies was observed: channel 4 is characterized by the highest amplitude and has lower variance than other channels; upper- and lowermost channels exhibit the lowest amplitudes. This tendency is noticeable for fundamental frequency, but for second harmonic it is much more apparent. It may be a result of magnocellular entrance in layer IV in VCx.
+    For stimulation with frequency higher than 2 Hz the signal forms a continuous oscillation. The amplitude of these oscillations during the first 1.5 s is higher than for the rest of the stimulation. Due to lack of clear peaks after stimuli analysis of evoked potentials could not be performed. For the analysis in the frequency domain the same tendency for all frequencies was observed: channel 4 is characterized by the highest amplitude and has lower variance than other channels; upper- and lowermost channels exhibit lower amplitudes. This tendency is noticeable for fundamental frequency, but for second harmonic it is much more apparent. It may be a result of magnocellular entrance in layer IV in VCx.
     
     Results obtained for CSD are consistent with study on macaque VCx (\cite{maier2011}). Although the authors used a longer flash (100-ms-long flashing screen) they also observed the initial current sink in response to the stimulus in layer IV. Unfortunately that study analyzed only on first 0.2~s after stimulus so the rest of the data could not be compared with our results. 
     

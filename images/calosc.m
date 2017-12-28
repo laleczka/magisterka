@@ -1,4 +1,4 @@
-% clear all
+clear all
 % %% Dla 1 i 7 Hz
 table.rat = {'kontrola43', 'kontrola44', 'kontrola45', 'kontrola46', 'kontrola47', 'kontrola55'}; %dla 1 i 7 Hz
 table.chans = {[1,3,5,7,9,11,12],[1,3,5,6,8,10,12],[1,2,4,5,8,10,12],[1,3,5,6,8,10,12],[1,2,5,7,8,9,10],1:7}; %dla 1 i 7 Hz
@@ -12,8 +12,8 @@ table.chans = {[1,3,5,7,9,11,12],[1,3,5,6,8,10,12],[1,2,4,5,8,10,12],[1,3,5,6,8,
 % table.chans = {[1,3,5,6,8,10,12],[1,2,5,7,8,9,10],1:7}; %dla 12 Hz
 
 %% Poszczegolne czêstoœci
-table.vep = {25, 1, 1, 1, 4, 4}; % vepy dla 1 Hz
-% table.vep = {7, 7, 7, 4, 1, 5}; % vepy dla 7 Hz
+% table.vep = {25, 1, 1, 1, 4, 4}; % vepy dla 1 Hz
+table.vep = {7, 7, 7, 4, 1, 5}; % vepy dla 7 Hz
 % table.vep = {13,14,13,7,9}; %vepy dla 2 Hz
 % table.vep = {19,20,19,10,8}; %vepy dla 10 Hz
 % table.vep = {31,26,25,13,7}; %vepy dla 4 Hz
@@ -31,53 +31,53 @@ Fs = 1000;
 [d,c] = butter(1, [45 55]/(Fs/2), 'stop');
 [f,e] = butter(1, 1/(Fs/2), 'high');
  
-% for v = 1:length(table.rat)
-%     path_data = ['D:\Doœwiadczenia\data matlab\kontrola\',table.rat{v},'\'];
-%     path_trig = ['D:\Doœwiadczenia\data multichannel\kontrola\',table.rat{v},'\'];
-%     x = load([path_data,table.rat{v},'_',sprintf('%.2d', table.vep{v}),'.mat']);
-%     s = size(x.all_data);
-%     chan_no = s(1);
-%     
-%     for ch=1:chan_no
-%         x.all_data(ch,:) = filtfilt(b,a, x.all_data(ch,:));
-%         x.all_data(ch,:) = filtfilt(d,c, x.all_data(ch,:));
-%         x.all_data(ch,:) = filtfilt(f,e, x.all_data(ch,:));
-%     end
-%     
-%     table.dataNN{v} = x.all_data;
-%   
-%     for ch=1:chan_no
-%         table.data{v}(ch,:) = (x.all_data(ch,:) - mean(x.all_data(ch,:)))/std(x.all_data(ch,:));
-%     end
-%     
-%     trig =  get_trig_from_dat_file([path_trig,table.rat{v},'_',sprintf('%.2d', table.vep{v}),'.dat']);
-%     trig_start = [];
-%     next = 1;
-% 
-%     while length(trig_start)<trig_no
-%         trig_start = [trig_start, next];
-%         next = find(trig>trig(next)+5*Fs,1);
-%     end
-%     
-%     ctrl(v).freq = (trig_start(2)-trig_start(1))/5;
-%     table.trigger{v} = trig(trig_start);
-% 
-% 
-%     
-% 
-% before = -0.2;
-% after = 0.8;
-% s = size(table.data{v});
-% chan_no = s(1);
-% 
-% 
-%     for ch=1:chan_no
-%         for t=1:trig_no
-%             table.trialNN{v}(ch,:,t) = table.dataNN{v}(ch, before*Fs+table.trigger{v}(t):after*Fs+table.trigger{v}(t));
-%             table.trial{v}(ch,:,t) = table.data{v}(ch, before*Fs+table.trigger{v}(t):after*Fs+table.trigger{v}(t));
-%         end
-%     end
-% end
+for v = 1:length(table.rat)
+    path_data = ['D:\Doœwiadczenia\data matlab\kontrola\',table.rat{v},'\'];
+    path_trig = ['D:\Doœwiadczenia\data multichannel\kontrola\',table.rat{v},'\'];
+    x = load([path_data,table.rat{v},'_',sprintf('%.2d', table.vep{v}),'.mat']);
+    s = size(x.all_data);
+    chan_no = s(1);
+    
+    for ch=1:chan_no
+        x.all_data(ch,:) = filtfilt(b,a, x.all_data(ch,:));
+        x.all_data(ch,:) = filtfilt(d,c, x.all_data(ch,:));
+        x.all_data(ch,:) = filtfilt(f,e, x.all_data(ch,:));
+    end
+    
+    table.dataNN{v} = x.all_data;
+  
+    for ch=1:chan_no
+        table.data{v}(ch,:) = (x.all_data(ch,:) - mean(x.all_data(ch,:)))/std(x.all_data(ch,:));
+    end
+    
+    trig =  get_trig_from_dat_file([path_trig,table.rat{v},'_',sprintf('%.2d', table.vep{v}),'.dat']);
+    trig_start = [];
+    next = 1;
+
+    while length(trig_start)<trig_no
+        trig_start = [trig_start, next];
+        next = find(trig>trig(next)+5*Fs,1);
+    end
+    
+    ctrl(v).freq = (trig_start(2)-trig_start(1))/5;
+    table.trigger{v} = trig(trig_start);
+
+
+    
+
+before = -0.5;
+after = 5.5;
+s = size(table.data{v});
+chan_no = s(1);
+
+
+    for ch=1:chan_no
+        for t=1:trig_no
+            table.trialNN{v}(ch,:,t) = table.dataNN{v}(ch, before*Fs+table.trigger{v}(t):after*Fs+table.trigger{v}(t));
+            table.trial{v}(ch,:,t) = table.data{v}(ch, before*Fs+table.trigger{v}(t):after*Fs+table.trigger{v}(t));
+        end
+    end
+end
 
 x_ax = before:1/Fs:after;
 
@@ -271,13 +271,13 @@ x_ax = before:1/Fs:after;
 % end
 
 %% Zaznaczenie co rozumiem przez pierwszy i drugi pik.
-srednie = zeros(7, (after-before)*Fs+1, length(table.vep));
-for ch=1:7
-    for v=1:length(table.vep)
-        srednie(ch, :, v) = mean(table.trial{v}(table.chans{v}(ch),:,:),3);  
-    end
-end
-
+% srednie = zeros(7, (after-before)*Fs+1, length(table.vep));
+% for ch=1:7
+%     for v=1:length(table.vep)
+%         srednie(ch, :, v) = mean(table.trial{v}(table.chans{v}(ch),:,:),3);  
+%     end
+% end
+% 
 % x = [x_ax, x_ax(end:-1:1)]; 
 % yy1 = [zeros(200,1); ones(101,1)*-2; zeros(700,1)];
 % yy2 = [zeros(200,1); ones(101,1)*2; zeros(700,1)];
@@ -403,74 +403,74 @@ end
 
 %% Srednie + odchylenie dla wszystkich szczurów
 
-yy1 = [zeros(200,1); ones(101,1)*-2; zeros(700,1)];
-yy2 = [zeros(200,1); ones(101,1)*2; zeros(700,1)];
-scale = 2.5;
-yy1 = ones(1001,1)*-scale;
-yy2 = [ones(230,1)*-scale; ones(101,1)*scale; ones(670,1)*-scale];
-ww = [yy1;yy2(end:-1:1)];   % vector of upper & lower boundaries
-
-zz3 = [ones(440,1)*-scale; ones(161,1)*scale; ones(400,1)*-scale];
-zz = [yy1;zz3(end:-1:1)];  
-
-
-figure('units','normalized','outerposition',[0 0 0.3 1])
-ha = tight_subplot(7,1,[.03 .03],[.08 .03],[.09 .05]);
-for i=1:7
-    x = x_ax; % 100 points between intersections
-    yy1 =[mean(srednie(i,:,:),3)-std(srednie(i,:,:),0,3)]; %lower function
-    yy2 = [mean(srednie(i,:,:),3)+std(srednie(i,:,:),0,3)]; % upper function
-    x = [x,x(end:-1:1)];        % repeat x values
-    yy = [yy1,yy2(end:-1:1)];   % vector of upper & lower boundaries
-
-    axes(ha(i))
-    plot(x_ax,mean(srednie(i,:,:),3), 'linewidth', 1.2, 'Color',[0 0 0.9])
-    hold on
-    fill(x,yy,'b', 'LineStyle','none')    % fill area defined by x & yy in blue
+% yy1 = [zeros(200,1); ones(101,1)*-2; zeros(700,1)];
+% yy2 = [zeros(200,1); ones(101,1)*2; zeros(700,1)];
+% scale = 2.5;
+% yy1 = ones(1001,1)*-scale;
+% yy2 = [ones(230,1)*-scale; ones(101,1)*scale; ones(670,1)*-scale];
+% ww = [yy1;yy2(end:-1:1)];   % vector of upper & lower boundaries
+% 
+% zz3 = [ones(440,1)*-scale; ones(161,1)*scale; ones(400,1)*-scale];
+% zz = [yy1;zz3(end:-1:1)];  
+% 
+% 
+% figure('units','normalized','outerposition',[0 0 0.3 1])
+% ha = tight_subplot(7,1,[.03 .03],[.08 .03],[.09 .05]);
+% for i=1:7
+%     x = x_ax; % 100 points between intersections
+%     yy1 =[mean(srednie(i,:,:),3)-std(srednie(i,:,:),0,3)]; %lower function
+%     yy2 = [mean(srednie(i,:,:),3)+std(srednie(i,:,:),0,3)]; % upper function
+%     x = [x,x(end:-1:1)];        % repeat x values
+%     yy = [yy1,yy2(end:-1:1)];   % vector of upper & lower boundaries
+% 
+%     axes(ha(i))
+%     plot(x_ax,mean(srednie(i,:,:),3), 'linewidth', 1.2, 'Color',[0 0 0.9])
 %     hold on
-%     fill(x,ww,[0,0.4,0.9],'LineStyle','none')
-%      hold on
-%     fill(x,zz,[0.4,0,0.9] ,'LineStyle','none')
-    alpha 0.2
-    ylim([-2 2])
-    xlim([before after])
-%     ylabel(labels{i})
-    if i == 7
-        xlabel('Time [s]', 'fontsize', 25)% 'fontweight', 'bold')
-        
-    elseif i == 4 
-        ylabel('Amplitude [a.u.]', 'fontsize', 25)
-        set(gca, 'xtick', [])
-    else
-        set(gca, 'xtick', [])
-      
-%         set(gca, 'ytick', [])
-    end
-    set(gca, 'fontsize', 20)
-end
+%     fill(x,yy,'b', 'LineStyle','none')    % fill area defined by x & yy in blue
+% %     hold on
+% %     fill(x,ww,[0,0.4,0.9],'LineStyle','none')
+% %      hold on
+% %     fill(x,zz,[0.4,0,0.9] ,'LineStyle','none')
+%     alpha 0.2
+%     ylim([-2 2])
+%     xlim([before after])
+% %     ylabel(labels{i})
+%     if i == 7
+%         xlabel('Time [s]', 'fontsize', 25)% 'fontweight', 'bold')
+%         
+%     elseif i == 4 
+%         ylabel('Amplitude [a.u.]', 'fontsize', 25)
+%         set(gca, 'xtick', [])
+%     else
+%         set(gca, 'xtick', [])
+%       
+% %         set(gca, 'ytick', [])
+%     end
+%     set(gca, 'fontsize', 20)
+% end
 
 %% ANALIZA WIDMOWA! %%
 
 %% Amplituda piku 7 i 14 Hz
-% ps = zeros(length(table.vep), 7, 2049);
-% % ps2 = zeros(7, 3001);
-% pmax = zeros(length(table.vep), 7, 2);
-% freq = 2;
-% for v=1:length(table.vep)
-%     for ch=1:7
-%         [p,f] = pwelch(mean(table.trial{v}(table.chans{v}(ch),:,:),3), 3*Fs, 2*Fs, [], Fs);
-%         ps(v,ch,:) = p;
-%     %     [p,f2] = furier(mean(table.trial{v}(ch,:,:),3), Fs);
-%     %     ps2(ch,:) = p;
-%         ind = find(freq -0.5<f & f<freq+0.5); 
-%         ind2 = find(2*freq -0.5<f & f<2*freq+0.5); 
-%     %     ind2 = find(freq -0.5<f2 & f2<freq+0.5); 
-%         pmax(v,ch,1) = max(ps(v,ch,ind));
-%         pmax(v,ch,2) = max(ps(v,ch,ind2));
-% 
-%     end
-% 
-% end
+ps = zeros(length(table.vep), 7, 2049);
+% ps2 = zeros(7, 3001);
+pmax = zeros(length(table.vep), 7, 2);
+freq = 2;
+for v=1:length(table.vep)
+    for ch=1:7
+        [p,f] = pwelch(mean(table.trial{v}(table.chans{v}(ch),:,:),3), 3*Fs, 2*Fs, [], Fs);
+        ps(v,ch,:) = p;
+    %     [p,f2] = furier(mean(table.trial{v}(ch,:,:),3), Fs);
+    %     ps2(ch,:) = p;
+        ind = find(freq -0.5<f & f<freq+0.5); 
+        ind2 = find(2*freq -0.5<f & f<2*freq+0.5); 
+    %     ind2 = find(freq -0.5<f2 & f2<freq+0.5); 
+        pmax(v,ch,1) = max(ps(v,ch,ind));
+        pmax(v,ch,2) = max(ps(v,ch,ind2));
+
+    end
+
+end
 
 %% Amplituda piku 7 Hz w zale¿noœci od g³êbokoœci
 % figure('units','normalized','outerposition',[0 0 0.55 0.6])
